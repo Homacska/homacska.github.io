@@ -1,0 +1,107 @@
+---
+title: "Analytics & Insights"
+---
+
+# Data Visualizations & Analysis
+
+Explore interactive charts, dashboards, and data-driven insights. This page showcases analytical work and visual storytelling.
+
+## Sample Dashboard
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate sample data
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+values = [45, 52, 48, 61, 55, 67]
+growth = [0, 15.5, -7.7, 27.1, -9.8, 21.8]
+
+# Create figure with subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+fig.patch.set_facecolor('#0a0e27')
+
+# Plot 1: Line chart
+ax1.plot(months, values, marker='o', linewidth=2.5, markersize=8, 
+         color='#00d9ff', markerfacecolor='#0066ff', markeredgewidth=2)
+ax1.fill_between(months, values, alpha=0.2, color='#00d9ff')
+ax1.set_facecolor('#141829')
+ax1.set_xlabel('Month', color='#e0e0e0', fontweight='bold')
+ax1.set_ylabel('Value', color='#e0e0e0', fontweight='bold')
+ax1.set_title('Performance Trend', color='#00d9ff', fontsize=14, fontweight='bold')
+ax1.grid(True, alpha=0.2, color='#2a3050')
+ax1.tick_params(colors='#e0e0e0')
+
+# Plot 2: Bar chart
+colors_bar = ['#0066ff' if x > 0 else '#ff6b35' for x in growth]
+ax2.bar(months, growth, color=colors_bar, edgecolor='#00d9ff', linewidth=1.5)
+ax2.set_facecolor('#141829')
+ax2.set_xlabel('Month', color='#e0e0e0', fontweight='bold')
+ax2.set_ylabel('Growth %', color='#e0e0e0', fontweight='bold')
+ax2.set_title('Month-over-Month Growth', color='#00d9ff', fontsize=14, fontweight='bold')
+ax2.axhline(y=0, color='#a0a0a0', linestyle='-', linewidth=1)
+ax2.grid(True, alpha=0.2, color='#2a3050', axis='y')
+ax2.tick_params(colors='#e0e0e0')
+
+plt.tight_layout()
+plt.savefig('dashboard.png', facecolor='#0a0e27', dpi=100, bbox_inches='tight')
+plt.show()
+```
+
+## Key Metrics
+
+| Metric | Value | Trend |
+|--------|-------|-------|
+| Total Users | 1,234 | ↑ 12.3% |
+| Engagement Rate | 68.5% | ↑ 5.2% |
+| Conversion Rate | 3.8% | ↑ 0.9% |
+| Avg Session Time | 4m 32s | ↑ 1m 15s |
+
+## Statistical Analysis
+
+```{python}
+import seaborn as sns
+
+# Generate sample dataset
+np.random.seed(42)
+data = {
+    'Category': np.repeat(['A', 'B', 'C', 'D'], 25),
+    'Values': np.concatenate([
+        np.random.normal(100, 15, 25),
+        np.random.normal(120, 20, 25),
+        np.random.normal(95, 18, 25),
+        np.random.normal(110, 12, 25)
+    ])
+}
+df = pd.DataFrame(data)
+
+# Create boxplot
+fig, ax = plt.subplots(figsize=(10, 6))
+fig.patch.set_facecolor('#0a0e27')
+
+sns.boxplot(data=df, x='Category', y='Values', palette=['#0066ff', '#00d9ff', '#7c3aed', '#ff6b35'],
+            ax=ax, linewidth=2)
+
+ax.set_facecolor('#141829')
+ax.set_xlabel('Category', color='#e0e0e0', fontweight='bold', fontsize=12)
+ax.set_ylabel('Values', color='#e0e0e0', fontweight='bold', fontsize=12)
+ax.set_title('Distribution Analysis by Category', color='#00d9ff', fontsize=14, fontweight='bold')
+ax.grid(True, alpha=0.2, color='#2a3050', axis='y')
+ax.tick_params(colors='#e0e0e0')
+
+plt.tight_layout()
+plt.savefig('distribution.png', facecolor='#0a0e27', dpi=100, bbox_inches='tight')
+plt.show()
+```
+
+## Insights
+
+- **Performance**: Consistent upward trend over the past 6 months
+- **Engagement**: Strong user engagement with 68.5% active participation
+- **Conversion**: Steady improvement in conversion metrics
+- **Distribution**: Clear differences between categories A, B, C, and D
+
+---
+
+**Note**: These are sample visualizations. Replace with your actual data and analysis.

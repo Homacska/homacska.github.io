@@ -1,0 +1,8 @@
+# Blog post defaults
+
+date-format: "YYYY-MM-DD"
+author: "Your Name"
+categories: []
+description: ""
+execute:
+  freeze: auto

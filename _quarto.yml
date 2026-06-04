@@ -3,15 +3,60 @@ project:
   output-dir: docs
 
 website:
-  title: "My Website"
+  title: "My Portfolio"
+  
   navbar:
+    logo: index.qmd
+    pinned: true
+    search: true
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: blog/index.qmd
+        text: Blog
+      - href: projects/index.qmd
+        text: Projects
+      - href: analytics.qmd
+        text: Analytics
+    right:
+      - icon: github
+        href: "https://github.com"
+        aria-label: GitHub
+      - icon: twitter
+        href: "https://twitter.com"
+        aria-label: Twitter
+      - icon: linkedin
+        href: "https://linkedin.com"
+        aria-label: LinkedIn
+
+  sidebar:
+    - id: blog
+      contents:
+        - blog/index.qmd
+        - blog/*.qmd
+      
+    - id: projects
+      contents:
+        - projects/index.qmd
+        - projects/*.qmd
+
+  page-footer:
+    center:
+      - text: "© 2026 My Portfolio"
+      - text: "Built with [Quarto](https://quarto.org/)"
+    right:
+      - href: "mailto:contact@example.com"
+        text: "Contact"
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
-    toc: true
+    toc: false
+    page-layout: full
+    link-external-newwindow: true
+    smooth-scroll: true

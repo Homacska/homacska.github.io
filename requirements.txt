@@ -1,0 +1,23 @@
+# Python dependencies for Quarto site
+# Optional - only needed if using Python code in .qmd files
+
+# Data analysis and visualization
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.13.0
+
+# Jupyter/interactive notebooks (optional)
+jupyter>=1.0.0
+ipython>=8.0.0
+
+# Data processing
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# Web/API (optional)
+requests>=2.31.0
+
+# Utilities
+python-dotenv>=1.0.0

@@ -1,5 +1,60 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-Add information about yourself here.
+## Background
+
+Passionate developer with a keen interest in building scalable, user-centric applications. I combine technical expertise with creative problem-solving to deliver impactful solutions.
+
+## Skills & Expertise
+
+### Development
+- **Frontend**: HTML5, CSS3, JavaScript, TypeScript, React, Vue.js
+- **Backend**: Python, Node.js, JavaScript, SQL
+- **Tools**: Git, Docker, AWS, VS Code
+
+### Data & Analytics
+- **Languages**: Python, SQL, R
+- **Libraries**: Pandas, NumPy, Matplotlib, Plotly, Scikit-learn
+- **Databases**: PostgreSQL, MongoDB, MySQL
+
+### Soft Skills
+- Problem-solving and critical thinking
+- Team collaboration and communication
+- Project management and organization
+- Mentoring and knowledge sharing
+
+## Experience Highlights
+
+### Senior Developer | Tech Company (2023 - Present)
+- Led development of high-traffic web applications
+- Mentored junior developers
+- Improved application performance by 40%
+
+### Full Stack Developer | Startup (2021 - 2023)
+- Built end-to-end features using React and Python
+- Designed and optimized database schemas
+- Implemented CI/CD pipelines
+
+### Junior Developer | Agency (2020 - 2021)
+- Developed responsive web applications
+- Collaborated with design teams
+- Fixed critical bugs and improved code quality
+
+## Education
+
+**B.S. in Computer Science**  
+University Name, Class of 2020
+
+## Interests
+
+Beyond code, I enjoy:
+- Contributing to open-source projects
+- Writing technical articles
+- Data visualization and storytelling
+- Exploring new technologies and frameworks
+- Coffee ☕ and keyboard customization ⌨️
+
+---
+
+**Let's connect!** Feel free to reach out via email or social media.

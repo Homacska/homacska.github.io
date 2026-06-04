@@ -1,0 +1,36 @@
+---
+title: "E-Commerce Platform"
+date: 2026-05-15
+tags: [fullstack, react, node.js, mongodb]
+link: "https://github.com/username/ecommerce"
+image: "https://via.placeholder.com/400x250?text=E-Commerce"
+description: "A full-stack e-commerce platform with React frontend and Node.js backend. Features include product catalog, shopping cart, and payment integration."
+---
+
+## Project Overview
+
+This is a comprehensive e-commerce platform built with modern web technologies. The platform provides a seamless shopping experience with an intuitive interface and robust backend infrastructure.
+
+## Features
+
+- **Product Catalog**: Browse and search products with filters
+- **Shopping Cart**: Add, remove, and manage cart items
+- **User Authentication**: Secure login and registration
+- **Payment Processing**: Integrated payment gateway
+- **Order Tracking**: Real-time order status updates
+- **Admin Dashboard**: Manage products, orders, and users
+
+## Tech Stack
+
+- **Frontend**: React, Redux, Material-UI
+- **Backend**: Node.js, Express, MongoDB
+- **Deployment**: AWS, Docker
+
+## Achievements
+
+- ✅ 10,000+ monthly active users
+- ✅ 99.9% uptime
+- ✅ <2s average page load time
+- ✅ 4.8/5 star rating
+
+[View on GitHub](https://github.com/username/ecommerce) | [Live Demo](#)

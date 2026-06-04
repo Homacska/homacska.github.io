@@ -1,7 +1,50 @@
 ---
-title: "Welcome"
+title: "Welcome to My Portfolio"
+image: assets/hero.svg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
 ---
 
-This is a Quarto website.
+# Full Stack Developer & Data Analyst
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Welcome to my digital space. I build elegant solutions to complex problems using modern technologies.
+
+## What I Do
+
+Specializing in **full-stack development**, **data visualization**, and **analytical insights**. Passionate about creating intuitive, high-performance applications and deriving actionable intelligence from data.
+
+## Featured Projects
+
+```{=html}
+<div class="content-grid">
+  <div class="content-card">
+    <h3>🚀 Project One</h3>
+    <p>A high-impact project showcasing modern development practices and innovative solutions.</p>
+    <a href="projects/index.html" class="btn btn-primary">View Projects →</a>
+  </div>
+  <div class="content-card">
+    <h3>📊 Data Analytics</h3>
+    <p>Interactive dashboards and visualizations revealing patterns and insights from complex datasets.</p>
+    <a href="analytics.html" class="btn btn-primary">Explore Analytics →</a>
+  </div>
+  <div class="content-card">
+    <h3>📚 Articles & Insights</h3>
+    <p>Technical writeups, tutorials, and thoughts on software engineering and data science.</p>
+    <a href="blog/index.html" class="btn btn-primary">Read Blog →</a>
+  </div>
+</div>
+```
+
+## Recent Activity
+
+<small>Check out the [blog](blog/index.html) for latest articles and [analytics](analytics.html) for data-driven insights.</small>

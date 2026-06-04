@@ -1,0 +1,9 @@
+# Project defaults
+
+date-format: "YYYY-MM-DD"
+tags: []
+link: ""
+image: ""
+description: ""
+execute:
+  freeze: auto
