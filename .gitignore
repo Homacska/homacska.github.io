@@ -1,7 +1,5 @@
-/_build/
-/.quarto/
-/docs/
-*.html
-.DS_Store
-
-**/*.quarto_ipynb
+.quarto/
+_site/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
