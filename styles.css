@@ -1207,55 +1207,30 @@ a {
   }
 }
 
-
-/* Mobile-only rules */
 /* =========================================================
    MOBILE-ONLY FIXES
    Desktop stays unchanged.
    ========================================================= */
 @media (max-width: 700px) {
-  /* More breathing room at top on mobile */
-  .hero {
-    padding-top: 10.0rem;
-    padding-bottom: 7.5rem;
-  }
-
-  /* Prevent Scroll cue overlapping buttons */
-  .scroll-cue {
-    bottom: 0.7rem;
-  }
-
-  .hero-actions {
-    margin-top: 1.2rem;
-  }
-
-  /* Mobile-only hero name alignment */
-  .name-frame-hero {
-    --name-width: 12.8rem;     /* wider = Jele moves right */
-    --name-size: 3.15rem;
-    --bracket-size: 4.9rem;
-    --lockup-gap: 0.3rem;
-  }
-}
-
-/* Hide scroll cue on very short mobile screens */
-@media (max-width: 700px) {
   .hero {
     padding-top: 5.8rem;
-    padding-bottom: 7.5rem;
+    padding-bottom: 8rem;
+  }
+
+  .hero-core {
+    padding-bottom: 4.2rem;
   }
 
   .hero-actions {
     margin-top: 1.2rem;
+    margin-bottom: 0;
   }
 
   .scroll-cue {
-    bottom: 0.45rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
-}
 
-/* MOBILE-ONLY: adjust Adam/Jele relative alignment without moving brackets */
-@media (max-width: 700px) {
+  /* Move Adam/Jele closer together without moving the brackets */
   .name-frame-hero {
     --mobile-name-pair-shift: 0.14em;
   }
@@ -1268,7 +1243,6 @@ a {
     transform: translateX(calc(var(--mobile-name-pair-shift) * -1));
   }
 }
-
 
 
 /* TEMP: disable work card links while content is unfinished */
