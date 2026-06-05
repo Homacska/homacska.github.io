@@ -110,69 +110,68 @@ a {
   text-transform: uppercase;
 }
 
-/* Mini version of the hero name lockup.
-   Jele is explicitly positioned rather than right-aligned, so its J
-   sits further right under the final arch/stem of the m in Adam. */
+/* Expanded top-left return mark.
+   This is not manually recreated anymore: it is a scaled lockup using the
+   same Adam/Jele alignment logic as the hero, so the relative word placement
+   stays locked to the homepage name. */
 .mark-full {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-  gap: 0.42rem;
+  display: grid;
+  place-items: center;
+  width: 8.8rem;
+  height: 3.3rem;
   opacity: 0;
   transform: translateY(0.45rem);
-  white-space: nowrap;
   text-transform: none;
   letter-spacing: 0;
 }
 
-.mark-bracket {
-  color: rgba(255, 247, 231, 0.9);
-  font-family: var(--font-mono);
-  font-size: 2.5rem;
-  font-weight: 200;
-  line-height: 0.68;
-  transform: translateY(-0.02rem);
+.mark-lockup-scale {
+  display: block;
+  width: 56rem;
+  height: 20rem;
+  transform: scale(0.152);
+  transform-origin: center;
 }
 
-.mark-name {
-  --mark-jele-x: 1.5em;
+.mark-lockup-frame {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: fit-content;
+  margin: 0 auto;
+  text-transform: none;
+}
 
-  position: relative;
-  width: 4.18em;
-  height: 1.55em;
+.mark-lockup-bracket {
+  color: rgba(255, 247, 231, 0.9);
+  font-family: var(--font-mono);
+  font-size: 13rem;
+  font-weight: 200;
+  line-height: 0.68;
+  text-transform: none;
+}
+
+.mark-lockup-name {
+  display: grid;
+  width: 38rem;
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 10.9rem;
   font-weight: 700;
   line-height: 0.78;
   letter-spacing: -0.075em;
   text-transform: none;
   font-variant-ligatures: discretionary-ligatures;
   text-shadow:
-    0 0 12px rgba(255, 247, 231, 0.1),
-    0 8px 24px rgba(0, 0, 0, 0.42);
-}
-
-.mark-name-word {
-  position: absolute;
-  display: block;
-  text-transform: none;
-  white-space: nowrap;
-}
-
-.mark-name-adam {
-  left: 0;
-  top: 0;
-}
-
-.mark-name-jele {
-  left: var(--mark-jele-x);
-  top: 0.72em;
+    0 0 28px rgba(255, 247, 231, 0.1),
+    0 18px 55px rgba(0, 0, 0, 0.62);
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 9.25rem;
+  min-width: 9.8rem;
   height: 3.65rem;
   padding: 0 0.78rem;
 }
@@ -863,7 +862,7 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 9.25rem;
+    min-width: 9.8rem;
     height: 3.65rem;
     padding: 0 0.78rem;
   }
@@ -1055,26 +1054,13 @@ h1::after {
     letter-spacing: 0.11em;
   }
 
-  .mark-name {
-    --mark-jele-x: 1.50em;
-
-    width: 4.18em;
-    height: 1.55em;
-    font-size: 1.18rem;
-  }
-
-  .mark-name-jele {
-    left: var(--mark-jele-x);
-    top: 0.72em;
-  }
-
-  .mark-bracket {
-    font-size: 2.08rem;
+  .mark-lockup-scale {
+    transform: scale(0.132);
   }
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8.45rem;
+    min-width: 8.65rem;
   }
 }
 
