@@ -367,7 +367,7 @@ a {
 }
 
 .name-frame-mini .name-word-jele {
-  transform: translateX(0.15em);
+  transform: translateX(0.20em);
 }
 
 .name-word {
@@ -1045,7 +1045,7 @@ a {
   }
 
   .name-frame-mini .name-word-jele {
-    transform: translateX(0.32em);
+    transform: translateX(0.20em);
   }
 
   .mark:hover,
