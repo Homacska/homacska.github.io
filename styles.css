@@ -1219,7 +1219,7 @@ a {
   }
 
   .hero-core {
-    transform: translateY(-2rem) !important;
+    transform: translateY(-1.75rem) !important;
   }
 
   .hero-actions {
