@@ -1,22 +1,32 @@
-# Personal Website
+# Adam Jele — Personal Website
 
-A static GitHub Pages website for my professional portfolio.
+Static GitHub Pages website for Adam Jele’s professional portfolio.
 
 ## Purpose
 
-Present my work across behavioural science, quantitative research, data analysis, AI and decision-focused insight.
+Present Adam’s work across behavioural science, quantitative research, data, decision-making, and AI-adjacent workflows.
 
 ## Tech
 
 - HTML
 - CSS
-- Optional vanilla JavaScript
-- Hosted on GitHub Pages
+- Minimal vanilla JavaScript
+- GitHub Pages compatible
+- No framework
+- No build step
+
+## Files
+
+- `index.html` — page structure and content
+- `styles.css` — full visual system and responsive styling
+- `script.js` — text rotation and subtle glitch text
+- `AGENTS.md` — instructions for future coding agents
+- `.nojekyll` — avoids GitHub Pages/Jekyll processing issues
 
 ## Design direction
 
-Modern, scientific, high-tech, research-led.
+Dark, elegant, scientific, old/new, editorial, high-tech, restrained glitch. The first landing screen should fill the viewport and centre Adam’s name inside a bracket-style frame.
 
-## Current status
+## Deployment
 
-Early static version. Prioritise clean structure, strong visual identity, and lightweight code before adding advanced interactions.
+Push these files to the repository root and enable GitHub Pages from the selected branch/folder.
