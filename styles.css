@@ -47,6 +47,12 @@ a {
   color: var(--white);
 }
 
+.page-top-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -74,7 +80,7 @@ a {
 
 .top-nav {
   display: flex;
-  gap: clamp(0.85rem, 3vw, 2rem);
+  gap: clamp(0.75rem, 2.4vw, 1.7rem);
 }
 
 .top-nav a {
@@ -187,12 +193,18 @@ a {
 .name-stage {
   position: relative;
   display: grid;
-  place-items: center;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-rows: minmax(6rem, 1fr) auto minmax(6rem, 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: clamp(0.8rem, 2vw, 2rem);
   width: min(100%, 92rem);
   min-height: clamp(23rem, 44vw, 36rem);
 }
 
 .name-frame {
+  grid-column: 2;
+  grid-row: 2;
   position: relative;
   z-index: 6;
   display: inline-grid;
@@ -283,30 +295,37 @@ h1::after {
 }
 
 /* Fixed v2-style phrase areas outside the bracket/name frame.
-   Corner placement keeps text inside the viewport and away from the central brackets. */
+   Grid columns keep phrases out of the central bracket/name area. */
 .signal-zone {
-  position: absolute;
+  position: relative;
   z-index: 5;
-  width: clamp(15rem, 25vw, 27rem);
-  height: clamp(11rem, 23vw, 18rem);
+  width: 100%;
+  height: min(26rem, 46vw);
+  max-width: 29rem;
+  min-width: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
 .signal-zone-left {
-  left: clamp(1rem, 4vw, 5rem);
-  bottom: 7%;
+  grid-column: 1;
+  grid-row: 2 / 4;
+  align-self: end;
+  justify-self: stretch;
   transform: none;
 }
 
 .signal-zone-right {
-  right: clamp(1rem, 4vw, 5rem);
-  top: 7%;
+  grid-column: 3;
+  grid-row: 1 / 3;
+  align-self: start;
+  justify-self: stretch;
   transform: none;
 }
 
 .signal-phrase {
   position: absolute;
-  max-width: min(27rem, calc(50vw - 2rem));
+  max-width: 100%;
   color: rgba(241, 234, 219, 0.78);
   font-family: var(--font-main);
   font-size: clamp(0.98rem, 1.7vw, 1.18rem);
@@ -314,6 +333,7 @@ h1::after {
   letter-spacing: 0.02em;
   line-height: 1.35;
   white-space: normal;
+  overflow-wrap: normal;
   opacity: 0;
   filter: blur(4px);
   text-shadow:
@@ -325,11 +345,13 @@ h1::after {
 
 .signal-zone-left .signal-phrase {
   right: 0;
+  left: auto;
   text-align: right;
 }
 
 .signal-zone-right .signal-phrase {
   left: 0;
+  right: auto;
   text-align: left;
 }
 
@@ -511,13 +533,41 @@ h1::after {
   line-height: 1.55;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
 .contact-link {
   display: inline-block;
-  margin-top: 2rem;
   color: var(--sand);
   font-family: var(--font-mono);
   font-size: clamp(1.1rem, 3vw, 2rem);
   border-bottom: 1px solid rgba(217, 199, 161, 0.35);
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 247, 231, 0.035);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 247, 231, 0.42);
 }
 
 @keyframes arrive {
@@ -582,29 +632,30 @@ h1::after {
 @media (max-width: 1160px) {
   .name-stage {
     min-height: 32rem;
+    grid-template-columns: minmax(0, 0.82fr) auto minmax(0, 0.82fr);
+    column-gap: clamp(0.5rem, 1.4vw, 1.2rem);
   }
 
   .signal-zone {
-    width: clamp(14rem, 24vw, 22rem);
+    max-width: 22rem;
   }
 
   .signal-phrase {
-    font-size: clamp(0.84rem, 1.25vw, 1rem);
-    max-width: min(22rem, calc(50vw - 2rem));
+    font-size: clamp(0.8rem, 1.2vw, 0.98rem);
   }
 
   .signal-phrase-glitch {
-    font-size: clamp(0.58rem, 0.95vw, 0.72rem);
+    font-size: clamp(0.56rem, 0.9vw, 0.7rem);
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .site-header {
     padding: 1rem;
   }
 
   .top-nav {
-    gap: 0.85rem;
+    gap: 0.8rem;
   }
 
   .hero {
@@ -613,9 +664,13 @@ h1::after {
 
   .name-stage {
     min-height: 31rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7rem auto 7rem;
   }
 
   .name-frame {
+    grid-column: 1;
+    grid-row: 2;
     gap: 0.35rem;
   }
 
@@ -631,17 +686,22 @@ h1::after {
 
   .signal-zone {
     width: min(23rem, 82vw);
-    height: 8rem;
+    max-width: 82vw;
+    height: 7rem;
   }
 
   .signal-zone-left {
-    left: 4%;
-    bottom: 0;
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    align-self: end;
   }
 
   .signal-zone-right {
-    right: 4%;
-    top: 0;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
   }
 
   .signal-phrase {
@@ -667,6 +727,13 @@ h1::after {
   }
 }
 
+@media (max-width: 620px) {
+  .top-nav {
+    font-size: 0.66rem;
+    letter-spacing: 0.11em;
+  }
+}
+
 @media (max-width: 520px) {
   .eyebrow {
     margin-bottom: 0.8rem;
@@ -674,6 +741,7 @@ h1::after {
 
   .name-stage {
     min-height: 28rem;
+    grid-template-rows: 6.5rem auto 6.5rem;
   }
 
   h1 {
@@ -687,7 +755,7 @@ h1::after {
 
   .signal-zone {
     opacity: 0.86;
-    height: 7rem;
+    height: 6.5rem;
   }
 
   .signal-phrase {
@@ -696,6 +764,11 @@ h1::after {
 
   .signal-phrase-glitch {
     font-size: 0.5rem;
+  }
+
+  .contact-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
