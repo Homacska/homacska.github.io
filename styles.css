@@ -1217,7 +1217,7 @@ a {
   /* More breathing room at top on mobile */
   .hero {
     padding-top: 5.8rem;
-    padding-bottom: 6.5rem;
+    padding-bottom: 8.0rem;
   }
 
   /* Prevent Scroll cue overlapping buttons */
@@ -1231,7 +1231,7 @@ a {
 
   /* Mobile-only hero name alignment */
   .name-frame-hero {
-    --name-width: 12.0rem;     /* wider = Jele moves right */
+    --name-width: 10.0rem;     /* wider = Jele moves right */
     --name-size: 3.15rem;
     --bracket-size: 4.9rem;
     --lockup-gap: 0.3rem;
