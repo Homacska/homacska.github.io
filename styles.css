@@ -113,23 +113,17 @@ a {
 .mark-full {
   display: grid;
   place-items: center;
-  width: 8.55rem;
-  height: 3.05rem;
   opacity: 0;
   transform: translateY(0.42rem);
-}
-
-.mark-image {
-  display: block;
-  width: 8.55rem;
-  height: auto;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 8.95rem;
-  height: 3.45rem;
-  padding: 0 0.7rem;
+  min-width: 9.4rem;
+  height: 3.6rem;
+  padding: 0 0.78rem;
 }
 
 .mark:hover .mark-short,
@@ -293,22 +287,33 @@ a {
 }
 
 .name-frame {
-  grid-column: 2;
-  grid-row: 2;
+  --name-width: clamp(18rem, 36vw, 38rem);
+  --name-size: clamp(4.4rem, 9.2vw, 9.4rem);
+  --bracket-size: clamp(7rem, 15vw, 15rem);
+  --lockup-gap: clamp(0.65rem, 1.7vw, 1.45rem);
+
   position: relative;
   z-index: 6;
   display: inline-grid;
   grid-template-columns: auto auto auto;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.65rem, 1.7vw, 1.45rem);
+  gap: var(--lockup-gap);
   width: fit-content;
   max-width: 100%;
   padding: clamp(1.2rem, 3vw, 2.8rem) clamp(0.25rem, 1vw, 1rem);
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
-.name-frame::before,
-.name-frame::after {
+.name-frame-hero {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.name-frame-hero::before,
+.name-frame-hero::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -318,33 +323,52 @@ a {
   transform: translateX(-50%);
 }
 
-.name-frame::before {
+.name-frame-hero::before {
   top: 0;
 }
 
-.name-frame::after {
+.name-frame-hero::after {
   bottom: 0;
 }
 
-h1 {
+/* Mini version uses the exact same lockup structure and alignment rules.
+   Only the size variables change. */
+.name-frame-mini {
+  --name-width: 4.95rem;
+  --name-size: 1.26rem;
+  --bracket-size: 2.35rem;
+  --lockup-gap: 0.27rem;
+
+  padding: 0;
+}
+
+.lockup-name {
   position: relative;
   display: grid;
-  width: clamp(18rem, 36vw, 38rem);
+  width: var(--name-width);
   margin: 0;
   color: var(--white);
   font-family: var(--font-display);
-  font-size: clamp(4.4rem, 9.2vw, 9.4rem);
+  font-size: var(--name-size);
   font-weight: 700;
   line-height: 0.78;
   letter-spacing: -0.075em;
+  text-transform: none;
   font-variant-ligatures: discretionary-ligatures;
   text-shadow:
     0 0 28px rgba(255, 247, 231, 0.1),
     0 18px 55px rgba(0, 0, 0, 0.62);
 }
 
+.name-frame-mini .lockup-name {
+  text-shadow:
+    0 0 12px rgba(255, 247, 231, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.42);
+}
+
 .name-word {
   display: block;
+  text-transform: none;
 }
 
 .name-word-adam {
@@ -356,8 +380,8 @@ h1 {
   margin-top: -0.06em;
 }
 
-/* Small serious "quirk": a precise editorial cut through the name. */
-h1::after {
+/* The same subtle cut line is shared by hero and mini mark. */
+.lockup-name::after {
   content: "";
   position: absolute;
   left: 1.5%;
@@ -370,13 +394,19 @@ h1::after {
   mix-blend-mode: screen;
 }
 
+.name-frame-mini .lockup-name::after {
+  opacity: 0.32;
+}
+
 .bracket {
   color: rgba(255, 247, 231, 0.9);
   font-family: var(--font-mono);
-  font-size: clamp(7rem, 15vw, 15rem);
+  font-size: var(--bracket-size);
   font-weight: 200;
   line-height: 0.68;
   text-shadow: 0 0 40px rgba(217, 199, 161, 0.12);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .bracket-left,
@@ -818,9 +848,9 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 8.95rem;
-    height: 3.45rem;
-    padding: 0 0.7rem;
+    min-width: 9.4rem;
+    height: 3.6rem;
+    padding: 0 0.78rem;
   }
 }
 
@@ -945,20 +975,13 @@ h1::after {
     grid-template-rows: 7rem auto 7rem;
   }
 
-  .name-frame {
+  .name-frame-hero {
     grid-column: 1;
     grid-row: 2;
-    gap: 0.35rem;
-  }
-
-  h1 {
-    width: clamp(13rem, 48vw, 22rem);
-    font-size: clamp(3.2rem, 12vw, 5.7rem);
-    letter-spacing: -0.082em;
-  }
-
-  .bracket {
-    font-size: clamp(5.2rem, 18vw, 8.5rem);
+    --name-width: clamp(13rem, 48vw, 22rem);
+    --name-size: clamp(3.2rem, 12vw, 5.7rem);
+    --bracket-size: clamp(5.2rem, 18vw, 8.5rem);
+    --lockup-gap: 0.35rem;
   }
 
   .signal-zone {
@@ -1010,14 +1033,16 @@ h1::after {
     letter-spacing: 0.11em;
   }
 
-  .mark-full,
-  .mark-image {
-    width: 7.7rem;
+  .name-frame-mini {
+    --name-width: 4.35rem;
+    --name-size: 1.1rem;
+    --bracket-size: 2.05rem;
+    --lockup-gap: 0.22rem;
   }
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8.1rem;
+    min-width: 8.35rem;
   }
 }
 
@@ -1031,13 +1056,10 @@ h1::after {
     grid-template-rows: 6.5rem auto 6.5rem;
   }
 
-  h1 {
-    width: clamp(11.5rem, 51vw, 16rem);
-    font-size: clamp(2.75rem, 12vw, 4.2rem);
-  }
-
-  .bracket {
-    font-size: clamp(4.2rem, 17vw, 6rem);
+  .name-frame-hero {
+    --name-width: clamp(11.5rem, 51vw, 16rem);
+    --name-size: clamp(2.75rem, 12vw, 4.2rem);
+    --bracket-size: clamp(4.2rem, 17vw, 6rem);
   }
 
   .signal-zone {
