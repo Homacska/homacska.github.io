@@ -1045,7 +1045,7 @@ a {
   }
 
   .name-frame-mini .name-word-jele {
-    transform: translateX(0.15em);
+    transform: translateX(var(--mini-jele-shift));
   }
 
   .mark:hover,
