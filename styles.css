@@ -1216,13 +1216,13 @@ a {
 @media (max-width: 700px) {
   /* More breathing room at top on mobile */
   .hero {
-    padding-top: 5.8rem;
+    padding-top: 8.0rem;
     padding-bottom: 8.0rem;
   }
 
   /* Prevent Scroll cue overlapping buttons */
   .scroll-cue {
-    bottom: 0.9rem;
+    bottom: 0.7rem;
   }
 
   .hero-actions {
