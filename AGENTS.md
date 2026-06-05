@@ -16,7 +16,7 @@ Desired feel:
 - elegant, not loud
 - technical but not generic
 - subtle glitch/interference
-- floating signal fragments around the brackets
+- floating signal fragments outside the brackets
 - scientific/research/product-lab mood
 
 Avoid:
@@ -29,6 +29,8 @@ Avoid:
 - over-engineering
 - top navigation cluttering the hero
 - structured tag boxes around the name
+- text overlapping the brackets/name area
+- drifting/moving text animations
 
 ## Technical rules
 
@@ -60,12 +62,13 @@ Keep copy concise, concrete, and professional.
 - Removed top navigation/header from the landing screen.
 - My name must stay on one line.
 - Brackets should be slightly larger than the name.
-- The display font should lean closer to the earlier elegant serif direction, not overly fashion/editorial.
+- The display font should stay close to the earlier elegant serif direction.
 - The single line under my name should stay removed.
-- The former line text and keyword/tag text are now one shared floating signal pool.
-- Signal fragments should appear where the earlier boxed tag clusters were: top-right and bottom-left around the brackets.
+- Use the earlier keyword set: Behavioural science, Neuroscience, Psychology, Decision-making, Data, Python, Signal, Future, Cyborg-adjacent, Cats, Implicit methods, Quant research, Human behaviour, Strategy, Evidence, AI workflows, Brains, Models, Noise, Meaning.
+- Signal fragments should appear outside the brackets, not over or inside the central name/bracket area.
 - Signal fragments should not have boxes or tag styling.
-- Signal fragments should pulse/fade in and out like the earlier line under the name.
+- Signal fragments should use a prominent clean sans font similar to the former line under my name.
+- Signal fragments should fade/pulse in and out like light appearing, without visible drifting movement.
 - Only a few fragments should be visible at once, but there should be visible fragments immediately on load.
 - Glitch/noise strings should appear only occasionally, roughly every fourth signal.
 

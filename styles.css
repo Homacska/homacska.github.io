@@ -1,4 +1,4 @@
-/* Personal site — v5 visual build.
+/* Personal site — v6 visual build.
    Plain HTML/CSS/JS. GitHub Pages safe. No frameworks. */
 
 :root {
@@ -130,7 +130,7 @@ a {
   display: grid;
   justify-items: center;
   text-align: center;
-  width: min(100%, 88rem);
+  width: min(100%, 92rem);
   animation: arrive 1200ms cubic-bezier(.2,.8,.2,1) both;
 }
 
@@ -148,7 +148,7 @@ a {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 88rem);
+  width: min(100%, 92rem);
   min-height: clamp(22rem, 42vw, 34rem);
 }
 
@@ -232,68 +232,68 @@ h1::after {
   animation: bracket-right 4.6s ease-in-out infinite;
 }
 
-/* Tall loose areas around the brackets. These replace the old boxed/tag cluster. */
+/* Loose signal areas outside the bracket/name frame. */
 .signal-zone {
   position: absolute;
   z-index: 5;
-  width: min(36rem, 38vw);
-  height: min(24rem, 46vw);
+  width: min(31rem, 34vw);
+  height: min(25rem, 44vw);
   pointer-events: none;
 }
 
 .signal-zone-left {
-  left: clamp(0rem, 1vw, 1.25rem);
-  bottom: 5%;
+  right: calc(50% + min(22vw, 21.5rem));
+  bottom: 7%;
 }
 
 .signal-zone-right {
-  right: clamp(0rem, 1vw, 1.25rem);
-  top: 4%;
+  left: calc(50% + min(22vw, 21.5rem));
+  top: 6%;
 }
 
 .signal-spark {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  max-width: min(24rem, 48vw);
-  color: rgba(255, 247, 231, 0.78);
+  max-width: min(25rem, 36vw);
+  color: rgba(255, 247, 231, 0.84);
   font-family: var(--font-main);
-  font-size: clamp(0.88rem, 1.45vw, 1.12rem);
+  font-size: clamp(1rem, 1.6vw, 1.24rem);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
   line-height: 1.35;
   text-align: left;
   white-space: nowrap;
   opacity: 0;
-  filter: blur(8px);
+  filter: blur(7px);
   text-shadow:
-    0 0 22px rgba(255, 247, 231, 0.18),
-    0 0 48px rgba(217, 199, 161, 0.1);
-  transform: translate3d(0, 1.1rem, 0) scale(0.97);
-  animation: spark-life var(--life, 5.2s) cubic-bezier(.2,.8,.2,1) forwards;
+    0 0 22px rgba(255, 247, 231, 0.2),
+    0 0 56px rgba(217, 199, 161, 0.12);
+  transform: translate3d(0, 0, 0);
+  animation: signal-appear var(--life, 5.2s) ease-in-out forwards;
 }
 
-.signal-spark.is-short {
-  font-family: var(--font-mono);
-  font-size: clamp(0.62rem, 1vw, 0.78rem);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(217, 199, 161, 0.74);
+.signal-spark.is-blue {
+  color: rgba(157, 200, 255, 0.78);
+}
+
+.signal-spark.is-sand {
+  color: rgba(217, 199, 161, 0.86);
 }
 
 .signal-spark.is-glitch {
   font-family: var(--font-mono);
-  font-size: clamp(0.6rem, 0.95vw, 0.76rem);
-  color: rgba(157, 200, 255, 0.68);
+  font-size: clamp(0.66rem, 1vw, 0.82rem);
+  color: rgba(157, 200, 255, 0.7);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-shadow:
     0 0 18px rgba(157, 200, 255, 0.14),
     0 0 44px rgba(157, 200, 255, 0.08);
-  animation-name: spark-life, glitch-jolt;
+  animation-name: signal-appear, glitch-jolt;
   animation-duration: var(--life, 4.8s), 620ms;
   animation-delay: 0s, 1.15s;
-  animation-timing-function: cubic-bezier(.2,.8,.2,1), steps(2, end);
+  animation-timing-function: ease-in-out, steps(2, end);
   animation-iteration-count: 1, 2;
 }
 
@@ -466,26 +466,23 @@ h1::after {
   50% { transform: translateX(0.28rem); opacity: 1; }
 }
 
-@keyframes spark-life {
+/* Similar to the earlier tag fade, but without boxes or movement. */
+@keyframes signal-appear {
   0% {
     opacity: 0;
-    filter: blur(10px);
-    transform: translate3d(0, 1.2rem, 0) scale(0.96);
+    filter: blur(9px);
   }
-  20% {
-    opacity: 0.88;
+  18% {
+    opacity: 0.92;
     filter: blur(0);
-    transform: translate3d(0, 0, 0) scale(1);
   }
-  58% {
-    opacity: 0.76;
+  62% {
+    opacity: 0.78;
     filter: blur(0);
-    transform: translate3d(0, -0.18rem, 0) scale(1);
   }
   100% {
     opacity: 0;
-    filter: blur(9px);
-    transform: translate3d(0, -1.1rem, 0) scale(0.985);
+    filter: blur(8px);
   }
 }
 
@@ -505,38 +502,31 @@ h1::after {
   50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
 }
 
-@media (max-width: 1050px) {
-  .hero-core {
-    width: min(100%, 76rem);
-  }
-
-  .name-stage {
-    min-height: 26rem;
-  }
-
+@media (max-width: 1160px) {
   .signal-zone {
-    width: min(28rem, 44vw);
-    height: 14rem;
+    width: min(26rem, 35vw);
   }
 
   .signal-zone-left {
-    left: 0;
-    bottom: 0;
+    right: calc(50% + min(20vw, 18rem));
   }
 
   .signal-zone-right {
-    right: 0;
-    top: 0;
+    left: calc(50% + min(20vw, 18rem));
+  }
+
+  .signal-spark {
+    font-size: clamp(0.9rem, 1.45vw, 1.08rem);
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .hero {
     padding: 3.5rem 1rem;
   }
 
   .name-stage {
-    min-height: 25rem;
+    min-height: 27rem;
   }
 
   .name-frame {
@@ -553,16 +543,27 @@ h1::after {
   }
 
   .signal-zone {
-    width: min(23rem, 74vw);
-    height: 10rem;
+    width: min(23rem, 72vw);
+    height: 9rem;
+  }
+
+  .signal-zone-left {
+    right: auto;
+    left: 4%;
+    bottom: 0;
+  }
+
+  .signal-zone-right {
+    left: auto;
+    right: 4%;
+    top: 0;
   }
 
   .signal-spark {
     max-width: 78vw;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
   }
 
-  .signal-spark.is-short,
   .signal-spark.is-glitch {
     font-size: 0.58rem;
   }
@@ -587,7 +588,7 @@ h1::after {
   }
 
   .name-stage {
-    min-height: 23rem;
+    min-height: 24rem;
   }
 
   h1 {
@@ -599,15 +600,14 @@ h1::after {
   }
 
   .signal-zone {
-    opacity: 0.84;
+    opacity: 0.86;
     height: 8rem;
   }
 
   .signal-spark {
-    font-size: 0.64rem;
+    font-size: 0.66rem;
   }
 
-  .signal-spark.is-short,
   .signal-spark.is-glitch {
     font-size: 0.52rem;
     letter-spacing: 0.08em;

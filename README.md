@@ -27,7 +27,7 @@ I want this site to present my work across behavioural science, quantitative res
 
 I want the site to feel dark, elegant, scientific, old/new, editorial, high-tech, and restrained. The first landing screen should fill the viewport and centre my name inside bracket-style framing.
 
-The text around my name should feel like floating signal fragments, not structured tags. It should combine the earlier keyword set and the line that used to appear below my name into one shared pool. These fragments should appear around the top-right and bottom-left of the brackets, pulsing in and out with only a few visible at once.
+The text around my name should use the earlier keyword set rather than long sentence fragments. It should sit outside the brackets, not overlap the name area, and fade in/out like light appearing rather than drifting around. It should be free-floating text, not boxed tags.
 
 ## Deployment
 
