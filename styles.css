@@ -121,7 +121,7 @@ a {
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 9.4rem;
+  min-width: 9.65rem;
   height: 3.6rem;
   padding: 0 0.78rem;
 }
@@ -364,6 +364,10 @@ a {
   text-shadow:
     0 0 12px rgba(255, 247, 231, 0.1),
     0 8px 24px rgba(0, 0, 0, 0.42);
+}
+
+.name-frame-mini .name-word-jele {
+  transform: translateX(0.32em);
 }
 
 .name-word {
@@ -848,7 +852,7 @@ a {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 9.4rem;
+    min-width: 9.65rem;
     height: 3.6rem;
     padding: 0 0.78rem;
   }
@@ -1040,9 +1044,13 @@ a {
     --lockup-gap: 0.22rem;
   }
 
+  .name-frame-mini .name-word-jele {
+    transform: translateX(0.32em);
+  }
+
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8.35rem;
+    min-width: 8.55rem;
   }
 }
 
