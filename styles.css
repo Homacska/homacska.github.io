@@ -1231,7 +1231,7 @@ a {
 
   /* Mobile-only hero name alignment */
   .name-frame-hero {
-    --name-width: 8.0rem;     /* wider = Jele moves right */
+    --name-width: 12.8rem;     /* wider = Jele moves right */
     --name-size: 3.15rem;
     --bracket-size: 4.9rem;
     --lockup-gap: 0.3rem;
@@ -1254,6 +1254,20 @@ a {
   }
 }
 
+/* MOBILE-ONLY: adjust Adam/Jele relative alignment without moving brackets */
+@media (max-width: 700px) {
+  .name-frame-hero {
+    --mobile-name-pair-shift: 0.14em;
+  }
+
+  .name-frame-hero .name-word-adam {
+    transform: translateX(var(--mobile-name-pair-shift));
+  }
+
+  .name-frame-hero .name-word-jele {
+    transform: translateX(calc(var(--mobile-name-pair-shift) * -1));
+  }
+}
 
 
 
