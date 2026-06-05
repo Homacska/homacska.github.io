@@ -47,6 +47,46 @@ a {
   color: var(--white);
 }
 
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  color: rgba(255, 247, 231, 0.76);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 1px solid var(--line);
+  color: var(--white);
+  background: rgba(255, 247, 231, 0.04);
+  box-shadow: inset 0 0 18px rgba(255, 247, 231, 0.04);
+}
+
+.top-nav {
+  display: flex;
+  gap: clamp(0.85rem, 3vw, 2rem);
+}
+
+.top-nav a {
+  opacity: 0.72;
+  transition: opacity 180ms ease, color 180ms ease;
+}
+
+.top-nav a:hover {
+  opacity: 1;
+  color: var(--sand);
+}
+
 .noise,
 .scanline,
 .ambient {
@@ -243,44 +283,44 @@ h1::after {
 }
 
 /* Fixed v2-style phrase areas outside the bracket/name frame.
-   Content is in the HTML now so old random one-word/glitch text cannot appear. */
+   Corner placement keeps text inside the viewport and away from the central brackets. */
 .signal-zone {
   position: absolute;
   z-index: 5;
-  width: min(34rem, 31vw);
-  height: min(26rem, 46vw);
+  width: clamp(15rem, 25vw, 27rem);
+  height: clamp(11rem, 23vw, 18rem);
   pointer-events: none;
 }
 
 .signal-zone-left {
-  right: calc(50% + min(31vw, 29rem));
-  top: 50%;
-  transform: translateY(-50%);
+  left: clamp(1rem, 4vw, 5rem);
+  bottom: 7%;
+  transform: none;
 }
 
 .signal-zone-right {
-  left: calc(50% + min(31vw, 29rem));
-  top: 50%;
-  transform: translateY(-50%);
+  right: clamp(1rem, 4vw, 5rem);
+  top: 7%;
+  transform: none;
 }
 
 .signal-phrase {
   position: absolute;
-  max-width: min(32rem, 31vw);
+  max-width: min(27rem, calc(50vw - 2rem));
   color: rgba(241, 234, 219, 0.78);
   font-family: var(--font-main);
-  font-size: clamp(0.98rem, 2vw, 1.22rem);
+  font-size: clamp(0.98rem, 1.7vw, 1.18rem);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.35;
-  white-space: nowrap;
+  white-space: normal;
   opacity: 0;
   filter: blur(4px);
   text-shadow:
     0 0 22px rgba(255, 247, 231, 0.18),
     0 0 46px rgba(217, 199, 161, 0.1);
   transform: none;
-  animation: signal-appear 33s ease-in-out infinite;
+  animation: signal-appear 24s ease-in-out infinite;
 }
 
 .signal-zone-left .signal-phrase {
@@ -299,34 +339,34 @@ h1::after {
 }
 
 .signal-phrase-two {
-  top: 66%;
-  animation-delay: 11s;
+  top: 68%;
+  animation-delay: 8s;
 }
 
 .signal-phrase-three {
   top: 12%;
-  animation-delay: 5.5s;
+  animation-delay: 4s;
 }
 
 .signal-phrase-four {
-  top: 60%;
-  animation-delay: 16.5s;
+  top: 62%;
+  animation-delay: 12s;
 }
 
 .signal-phrase-five {
-  top: 42%;
-  animation-delay: 22s;
+  top: 44%;
+  animation-delay: 16s;
 }
 
 .signal-phrase-six {
-  top: 40%;
-  animation-delay: 27.5s;
+  top: 42%;
+  animation-delay: 20s;
 }
 
 .signal-phrase-glitch {
   color: rgba(188, 139, 255, 0.78);
   font-family: var(--font-mono);
-  font-size: clamp(0.72rem, 1.35vw, 0.92rem);
+  font-size: clamp(0.66rem, 1.05vw, 0.82rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-shadow:
@@ -505,21 +545,21 @@ h1::after {
   }
 }
 
-/* V2 bottom-line look + old tag fade feel: fade/blur only, no movement. */
+/* V2 bottom-line look + old tag fade feel: faster fade/blur only, no movement. */
 @keyframes signal-appear {
   0% {
     opacity: 0;
     filter: blur(4px);
   }
-  10% {
+  6% {
     opacity: 0.9;
     filter: blur(0);
   }
-  34% {
-    opacity: 0.82;
+  24% {
+    opacity: 0.8;
     filter: blur(0);
   }
-  46% {
+  32% {
     opacity: 0;
     filter: blur(4px);
   }
@@ -545,28 +585,28 @@ h1::after {
   }
 
   .signal-zone {
-    width: min(27rem, 30vw);
-  }
-
-  .signal-zone-left {
-    right: calc(50% + min(32vw, 24rem));
-  }
-
-  .signal-zone-right {
-    left: calc(50% + min(32vw, 24rem));
+    width: clamp(14rem, 24vw, 22rem);
   }
 
   .signal-phrase {
-    font-size: clamp(0.86rem, 1.35vw, 1.05rem);
-    max-width: min(26rem, 30vw);
+    font-size: clamp(0.84rem, 1.25vw, 1rem);
+    max-width: min(22rem, calc(50vw - 2rem));
   }
 
   .signal-phrase-glitch {
-    font-size: clamp(0.62rem, 1vw, 0.76rem);
+    font-size: clamp(0.58rem, 0.95vw, 0.72rem);
   }
 }
 
 @media (max-width: 860px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .top-nav {
+    gap: 0.85rem;
+  }
+
   .hero {
     padding: 3.5rem 1rem;
   }
@@ -595,18 +635,13 @@ h1::after {
   }
 
   .signal-zone-left {
-    right: auto;
     left: 4%;
-    top: auto;
     bottom: 0;
-    transform: none;
   }
 
   .signal-zone-right {
-    left: auto;
     right: 4%;
     top: 0;
-    transform: none;
   }
 
   .signal-phrase {
