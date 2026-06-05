@@ -1227,7 +1227,7 @@ a {
   }
 
   .scroll-cue {
-    bottom: max(1.45rem, calc(env(safe-area-inset-bottom) + 1.5rem) );
+    bottom: max(2.25rem, calc(env(safe-area-inset-bottom) + 1.5rem) );
   }
 
   /* Move Adam/Jele closer together without moving the brackets */
