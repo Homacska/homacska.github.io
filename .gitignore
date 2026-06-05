@@ -1,0 +1,30 @@
+# OS/system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment files
+.env
+.env.*
+
+# Python/cache files, in case helper scripts are added later
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build/output folders, if added later
+/dist/
+/build/

@@ -1,18 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adam Jele</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adam Jele — behavioural science, research, data, psychology, and decision-making." />
+  <title>Adam Jele | Behavioural Science, Research & Data</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="hero">
-    <p class="eyebrow">Research · Behaviour · Data</p>
-    <h1>Adam Jele</h1>
-    <p class="intro">
-      I turn messy human behaviour, research data, and strategic questions into clear decisions.
-    </p>
-  </main>
+  <div class="site-shell">
+    <header class="site-header" aria-label="Site header">
+      <a class="wordmark" href="#top" aria-label="Adam Jele home">AJ</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#signal">Signal</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introductory landing section">
+        <div class="background-grid" aria-hidden="true"></div>
+        <div class="scanlines" aria-hidden="true"></div>
+        <div class="interference" aria-hidden="true" id="interference"></div>
+
+        <div class="keyword-cloud keyword-cloud--top" aria-hidden="true">
+          <span>Behavioural science</span>
+          <span>Neuroscience</span>
+          <span>Psychology</span>
+          <span>Decision-making</span>
+          <span>Data</span>
+          <span>Python</span>
+          <span>Signal</span>
+          <span>Future</span>
+          <span>Cyborg-adjacent</span>
+          <span>Cats</span>
+        </div>
+
+        <div class="keyword-cloud keyword-cloud--bottom" aria-hidden="true">
+          <span>Implicit methods</span>
+          <span>Quant research</span>
+          <span>Human behaviour</span>
+          <span>Strategy</span>
+          <span>Evidence</span>
+          <span>AI workflows</span>
+          <span>Brains</span>
+          <span>Models</span>
+          <span>Noise</span>
+          <span>Meaning</span>
+        </div>
+
+        <div class="hero-core">
+          <p class="eyebrow">Research · Behaviour · Data</p>
+
+          <div class="name-frame" aria-label="Adam Jele">
+            <span class="bracket bracket--left" aria-hidden="true">[</span>
+            <h1>Adam Jele</h1>
+            <span class="bracket bracket--right" aria-hidden="true">]</span>
+          </div>
+
+          <p class="rotating-line">
+            <span id="rotatingText">Turning behaviour into decision-ready evidence.</span>
+          </p>
+
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button--primary" href="#work">View work</a>
+            <a class="button button--secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#signal" aria-label="Scroll to next section">
+          <span>Scroll</span>
+          <span class="scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section class="section" id="signal">
+        <div class="section-kicker">Signal / 001</div>
+        <div class="section-grid">
+          <h2>I work at the intersection of human behaviour, evidence, and decision-making.</h2>
+          <div class="section-copy">
+            <p>
+              I am a researcher and analyst focused on behavioural science, quantitative insight, psychology,
+              data, and AI-adjacent workflows. The through-line is simple: turn messy human behaviour into
+              clear, defensible decisions.
+            </p>
+            <p>
+              This site is a living professional portfolio: selected work, methods, writing, tools, and experiments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-kicker">Selected work / 002</div>
+        <div class="card-grid">
+          <article class="work-card">
+            <span class="card-label">Behavioural research</span>
+            <h3>From attention to action</h3>
+            <p>Brand, pack, shelf, and campaign research built around how people notice, interpret, choose, and remember.</p>
+          </article>
+          <article class="work-card">
+            <span class="card-label">Decision science</span>
+            <h3>Evidence for hard trade-offs</h3>
+            <p>Pricing, segmentation, product, and communication studies translated into practical recommendations.</p>
+          </article>
+          <article class="work-card">
+            <span class="card-label">Data + AI</span>
+            <h3>Better workflows for insight</h3>
+            <p>Python, structured knowledge, local tools, and AI-assisted systems for faster synthesis and clearer outputs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact">
+        <div class="section-kicker">Contact / 003</div>
+        <h2>Available for research, insight, behavioural science, and data-adjacent work.</h2>
+        <div class="contact-row">
+          <a href="mailto:jadamp@gmail.com">jadamp@gmail.com</a>
+          <a href="https://github.com/jadamp" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
