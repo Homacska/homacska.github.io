@@ -135,8 +135,10 @@ a {
 }
 
 .mark-name {
+  --mark-jele-x: 2.55em;
+
   position: relative;
-  width: 4.35em;
+  width: 4.18em;
   height: 1.55em;
   color: var(--white);
   font-family: var(--font-display);
@@ -164,13 +166,13 @@ a {
 }
 
 .mark-name-jele {
-  left: 2.78em;
+  left: var(--mark-jele-x);
   top: 0.72em;
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 9.75rem;
+  min-width: 9.25rem;
   height: 3.65rem;
   padding: 0 0.78rem;
 }
@@ -861,7 +863,7 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 9.75rem;
+    min-width: 9.25rem;
     height: 3.65rem;
     padding: 0 0.78rem;
   }
@@ -1054,13 +1056,15 @@ h1::after {
   }
 
   .mark-name {
-    width: 4.35em;
+    --mark-jele-x: 2.55em;
+
+    width: 4.18em;
     height: 1.55em;
     font-size: 1.18rem;
   }
 
   .mark-name-jele {
-    left: 2.78em;
+    left: var(--mark-jele-x);
     top: 0.72em;
   }
 
@@ -1070,7 +1074,7 @@ h1::after {
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8.85rem;
+    min-width: 8.45rem;
   }
 }
 
