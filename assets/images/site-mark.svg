@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="Adam Jele">
+  <defs>
+    <style>
+      .bg { fill: none; }
+      .bracket {
+        fill: #fff7e7;
+        fill-opacity: 0.92;
+        font-family: SFMono-Regular, Consolas, "Liberation Mono", monospace;
+        font-size: 150px;
+        font-weight: 200;
+      }
+      .name {
+        fill: #fff7e7;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 124px;
+        font-weight: 700;
+        letter-spacing: -6px;
+      }
+    </style>
+  </defs>
+  <rect class="bg" width="520" height="200"/>
+  <!-- equal bracket spacing around a fixed name box -->
+  <text class="bracket" x="40" y="132">[</text>
+  <text class="bracket" x="447" y="132">]</text>
+  <!-- fixed name box -->
+  <text class="name" x="132" y="88" text-anchor="start">Adam</text>
+  <!-- Jele starts directly under the end arch of the m -->
+  <text class="name" x="236" y="164" text-anchor="start">Jele</text>
+</svg>

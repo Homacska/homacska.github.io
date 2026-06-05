@@ -91,9 +91,9 @@ a {
   text-transform: none;
   letter-spacing: 0;
   transition:
-    min-width 260ms ease,
-    height 260ms ease,
-    padding 260ms ease,
+    min-width 240ms ease,
+    height 240ms ease,
+    padding 240ms ease,
     border-color 180ms ease,
     background 180ms ease;
 }
@@ -101,7 +101,7 @@ a {
 .mark-short,
 .mark-full {
   grid-area: 1 / 1;
-  transition: opacity 180ms ease, transform 240ms ease;
+  transition: opacity 180ms ease, transform 220ms ease;
 }
 
 .mark-short {
@@ -110,92 +110,32 @@ a {
   text-transform: uppercase;
 }
 
-/* Expanded top-left return mark.
-   Direct mini version of the hero lockup, without transform-scaling a huge element.
-   This avoids clipping/blank rendering and keeps the Adam/Jele relationship explicit. */
 .mark-full {
   display: grid;
   place-items: center;
-  width: 8.75rem;
-  height: 3.25rem;
+  width: 8.55rem;
+  height: 3.05rem;
   opacity: 0;
-  transform: translateY(0.45rem);
-  text-transform: none;
-  letter-spacing: 0;
+  transform: translateY(0.42rem);
 }
 
-.mark-lockup-scale {
-  display: grid;
-  place-items: center;
-  width: 8.75rem;
-  height: 3.25rem;
-  transform: none;
-}
-
-.mark-lockup-frame {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-  justify-content: center;
-  gap: 0.34rem;
-  width: fit-content;
-  text-transform: none;
-}
-
-.mark-lockup-bracket {
-  color: rgba(255, 247, 231, 0.9);
-  font-family: var(--font-mono);
-  font-size: 2.45rem;
-  font-weight: 200;
-  line-height: 0.68;
-  text-transform: none;
-}
-
-.mark-lockup-name {
-  position: relative;
-  width: 4.05rem;
-  height: 2.05rem;
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: 1.42rem;
-  font-weight: 700;
-  line-height: 0.78;
-  letter-spacing: -0.075em;
-  text-transform: none;
-  font-variant-ligatures: discretionary-ligatures;
-  text-shadow:
-    0 0 12px rgba(255, 247, 231, 0.1),
-    0 8px 24px rgba(0, 0, 0, 0.42);
-}
-
-.mark-lockup-name .name-word {
-  position: absolute;
+.mark-image {
   display: block;
-  text-transform: none;
-  white-space: nowrap;
-}
-
-.mark-lockup-name .name-word-adam {
-  left: 0;
-  top: 0;
-}
-
-.mark-lockup-name .name-word-jele {
-  left: 2.18rem;
-  top: 1.02rem;
+  width: 8.55rem;
+  height: auto;
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 9.45rem;
-  height: 3.65rem;
-  padding: 0 0.78rem;
+  min-width: 8.95rem;
+  height: 3.45rem;
+  padding: 0 0.7rem;
 }
 
 .mark:hover .mark-short,
 .mark:focus-visible .mark-short {
   opacity: 0;
-  transform: translateY(-0.45rem);
+  transform: translateY(-0.42rem);
 }
 
 .mark:hover .mark-full,
@@ -878,9 +818,9 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 9.45rem;
-    height: 3.65rem;
-    padding: 0 0.78rem;
+    min-width: 8.95rem;
+    height: 3.45rem;
+    padding: 0 0.7rem;
   }
 }
 
@@ -1071,28 +1011,13 @@ h1::after {
   }
 
   .mark-full,
-  .mark-lockup-scale {
-    width: 7.75rem;
-  }
-
-  .mark-lockup-bracket {
-    font-size: 2.08rem;
-  }
-
-  .mark-lockup-name {
-    width: 3.45rem;
-    height: 1.78rem;
-    font-size: 1.18rem;
-  }
-
-  .mark-lockup-name .name-word-jele {
-    left: 1.86rem;
-    top: 0.86rem;
+  .mark-image {
+    width: 7.7rem;
   }
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8.35rem;
+    min-width: 8.1rem;
   }
 }
 
