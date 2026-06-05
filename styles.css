@@ -268,10 +268,10 @@ h1::after {
 .signal-spark {
   position: absolute;
   top: var(--y);
-  max-width: min(22rem, 25vw);
+  max-width: min(32rem, 31vw);
   color: rgba(241, 234, 219, 0.78);
   font-family: var(--font-main);
-  font-size: clamp(0.98rem, 1.7vw, 1.22rem);
+  font-size: clamp(0.98rem, 1.9vw, 1.22rem);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.35;
@@ -282,7 +282,7 @@ h1::after {
     0 0 22px rgba(255, 247, 231, 0.18),
     0 0 46px rgba(217, 199, 161, 0.1);
   transform: none;
-  animation: signal-appear var(--life, 5.2s) ease-in-out forwards;
+  animation: signal-appear var(--life, 7.2s) ease-in-out forwards;
 }
 
 .signal-zone-left .signal-spark {
@@ -297,23 +297,20 @@ h1::after {
   text-align: left;
 }
 
-.signal-spark.is-blue {
-  color: rgba(157, 200, 255, 0.72);
-}
-
-.signal-spark.is-sand {
-  color: rgba(217, 199, 161, 0.82);
-}
-
+.signal-spark.is-blue,
+.signal-spark.is-sand,
 .signal-spark.is-glitch {
+  color: rgba(241, 234, 219, 0.78);
   font-family: var(--font-main);
-  font-size: clamp(0.98rem, 1.7vw, 1.22rem);
-  color: rgba(217, 199, 161, 0.8);
+  font-size: clamp(0.98rem, 1.9vw, 1.22rem);
+  font-weight: 400;
   letter-spacing: 0.02em;
+  line-height: 1.35;
   text-transform: none;
+  transform: none;
   text-shadow:
-    0 0 22px rgba(255, 247, 231, 0.16),
-    0 0 42px rgba(217, 199, 161, 0.08);
+    0 0 22px rgba(255, 247, 231, 0.18),
+    0 0 46px rgba(217, 199, 161, 0.1);
 }
 
 .hero-actions {
@@ -493,12 +490,12 @@ h1::after {
     opacity: 0;
     filter: blur(4px);
   }
-  18% {
-    opacity: 0.88;
+  20% {
+    opacity: 0.9;
     filter: blur(0);
   }
-  68% {
-    opacity: 0.76;
+  78% {
+    opacity: 0.82;
     filter: blur(0);
   }
   100% {
@@ -536,8 +533,8 @@ h1::after {
 
   .signal-spark,
   .signal-spark.is-glitch {
-    font-size: clamp(0.86rem, 1.35vw, 1rem);
-    max-width: min(18rem, 24vw);
+    font-size: clamp(0.88rem, 1.35vw, 1.05rem);
+    max-width: min(26rem, 30vw);
   }
 }
 
@@ -583,7 +580,7 @@ h1::after {
 
   .signal-spark,
   .signal-spark.is-glitch {
-    max-width: 78vw;
+    max-width: 82vw;
     font-size: 0.82rem;
   }
 
