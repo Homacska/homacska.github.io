@@ -162,12 +162,11 @@ a {
 .mark-name-jele {
   justify-self: end;
   margin-top: -0.06em;
-  transform: translateX(0.30em);
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 8.95rem;
+  min-width: 9.4rem;
   height: 3.65rem;
   padding: 0 0.78rem;
 }
@@ -858,7 +857,7 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 8.95rem;
+    min-width: 9.4rem;
     height: 3.65rem;
     padding: 0 0.78rem;
   }
@@ -1051,7 +1050,7 @@ h1::after {
   }
 
   .mark-name {
-    width: 3.72em;
+    width: 4.05em;
     font-size: 1.18rem;
   }
 
