@@ -60,12 +60,13 @@ Keep copy concise, concrete, and professional.
 - Removed top navigation/header from the landing screen.
 - My name must stay on one line.
 - Brackets should be slightly larger than the name.
-- Display font should feel powerful and high-contrast.
-- The single line under my name has been removed.
-- The text from that line now appears as loose floating signal fragments around the name frame.
+- The display font should lean closer to the earlier elegant serif direction, not overly fashion/editorial.
+- The single line under my name should stay removed.
+- The former line text and keyword/tag text are now one shared floating signal pool.
+- Signal fragments should appear where the earlier boxed tag clusters were: top-right and bottom-left around the brackets.
 - Signal fragments should not have boxes or tag styling.
-- Signal fragments should appear in taller, less structured areas around the brackets.
-- Only a few fragments should be visible at once.
+- Signal fragments should pulse/fade in and out like the earlier line under the name.
+- Only a few fragments should be visible at once, but there should be visible fragments immediately on load.
 - Glitch/noise strings should appear only occasionally, roughly every fourth signal.
 
 ## Immediate next priorities
