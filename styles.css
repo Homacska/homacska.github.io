@@ -106,11 +106,14 @@ a {
   font-family: var(--font-mono);
 }
 
+/* Mini version of the hero name lockup.
+   Ratio mirrors the hero: name width ≈ 4.04em, same serif, same line-height,
+   Adam left-aligned and Jele right-aligned. */
 .mark-full {
   display: inline-grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  gap: 0.38rem;
+  gap: 0.34rem;
   opacity: 0;
   transform: translateY(0.45rem);
   white-space: nowrap;
@@ -119,35 +122,44 @@ a {
 .mark-bracket {
   color: rgba(255, 247, 231, 0.9);
   font-family: var(--font-mono);
-  font-size: 2.15rem;
+  font-size: 2.28rem;
   font-weight: 200;
-  line-height: 0.75;
+  line-height: 0.68;
+  transform: translateY(-0.02rem);
 }
 
 .mark-name {
   display: grid;
-  width: 4.4rem;
+  width: 5.35rem;
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.18rem;
+  font-size: 1.325rem;
   font-weight: 700;
   line-height: 0.78;
   letter-spacing: -0.075em;
+  font-variant-ligatures: discretionary-ligatures;
+  text-shadow:
+    0 0 12px rgba(255, 247, 231, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.42);
 }
 
-.mark-name span:first-child {
+.mark-name-word {
+  display: block;
+}
+
+.mark-name-adam {
   justify-self: start;
 }
 
-.mark-name span:last-child {
+.mark-name-jele {
   justify-self: end;
-  margin-top: -0.04em;
+  margin-top: -0.06em;
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 8.6rem;
-  height: 3.35rem;
+  min-width: 9.75rem;
+  height: 3.5rem;
   padding: 0 0.74rem;
 }
 
@@ -599,11 +611,11 @@ h1::after {
 
 /* =========================================================
    5. WORK CARDS
-   Current card visuals are CSS placeholders made from <span> shapes.
-   To use a real image:
-   - put the file in assets/images/
-   - replace the card-visual spans in index.html with:
-     <img src="./assets/images/file-name.png" alt="Description">
+   Card images now come from assets/images/.
+   To update a card image:
+   - replace assets/images/work-placeholder-01.svg with your own file
+     using the same filename; OR
+   - change the <img src=""> in index.html to a new filename.
    ========================================================= */
 .work-section {
   padding-top: clamp(5rem, 11vw, 9rem);
@@ -671,7 +683,8 @@ h1::after {
 
 .card-visual {
   position: relative;
-  min-height: 8rem;
+  height: 8.8rem;
+  min-height: 8.8rem;
   margin-bottom: 1.4rem;
   border: 1px solid rgba(255, 247, 231, 0.1);
   background:
@@ -698,7 +711,7 @@ h1::after {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 8rem;
+  min-height: 8.8rem;
   object-fit: cover;
 }
 
@@ -836,8 +849,8 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 8.6rem;
-    height: 3.35rem;
+    min-width: 9.75rem;
+    height: 3.5rem;
     padding: 0 0.74rem;
   }
 }
@@ -1029,17 +1042,17 @@ h1::after {
   }
 
   .mark-name {
-    width: 3.8rem;
-    font-size: 1.02rem;
+    width: 4.45rem;
+    font-size: 1.1rem;
   }
 
   .mark-bracket {
-    font-size: 1.9rem;
+    font-size: 1.98rem;
   }
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 7.8rem;
+    min-width: 8.45rem;
   }
 }
 
