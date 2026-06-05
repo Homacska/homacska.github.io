@@ -162,6 +162,7 @@ a {
 .mark-name-jele {
   justify-self: end;
   margin-top: -0.06em;
+  transform: translateX(0.12em);
 }
 
 .mark:hover,
