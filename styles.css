@@ -237,13 +237,9 @@ h1::after {
   text-shadow: 0 0 40px rgba(217, 199, 161, 0.12);
 }
 
-.bracket-left {
-  animation: bracket-flicker 19s steps(1, end) infinite;
-}
-
+.bracket-left,
 .bracket-right {
-  animation: bracket-flicker 23s steps(1, end) infinite;
-  animation-delay: 7s;
+  animation: bracket-flicker 22s steps(1, end) infinite;
 }
 
 /* Fixed v2-style phrase areas outside the bracket/name frame.
@@ -284,7 +280,7 @@ h1::after {
     0 0 22px rgba(255, 247, 231, 0.18),
     0 0 46px rgba(217, 199, 161, 0.1);
   transform: none;
-  animation: signal-appear 22s ease-in-out infinite;
+  animation: signal-appear 33s ease-in-out infinite;
 }
 
 .signal-zone-left .signal-phrase {
@@ -315,6 +311,27 @@ h1::after {
 .signal-phrase-four {
   top: 60%;
   animation-delay: 16.5s;
+}
+
+.signal-phrase-five {
+  top: 42%;
+  animation-delay: 22s;
+}
+
+.signal-phrase-six {
+  top: 40%;
+  animation-delay: 27.5s;
+}
+
+.signal-phrase-glitch {
+  color: rgba(188, 139, 255, 0.78);
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.35vw, 0.92rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 22px rgba(188, 139, 255, 0.22),
+    0 0 46px rgba(188, 139, 255, 0.12);
 }
 
 .hero-actions {
@@ -543,6 +560,10 @@ h1::after {
     font-size: clamp(0.86rem, 1.35vw, 1.05rem);
     max-width: min(26rem, 30vw);
   }
+
+  .signal-phrase-glitch {
+    font-size: clamp(0.62rem, 1vw, 0.76rem);
+  }
 }
 
 @media (max-width: 860px) {
@@ -593,6 +614,10 @@ h1::after {
     font-size: 0.82rem;
   }
 
+  .signal-phrase-glitch {
+    font-size: 0.58rem;
+  }
+
   .hero-actions {
     flex-wrap: wrap;
     justify-content: center;
@@ -632,6 +657,10 @@ h1::after {
 
   .signal-phrase {
     font-size: 0.66rem;
+  }
+
+  .signal-phrase-glitch {
+    font-size: 0.5rem;
   }
 }
 
