@@ -135,7 +135,7 @@ a {
 }
 
 .mark-name {
-  --mark-jele-x: 2.55em;
+  --mark-jele-x: 2.1em;
 
   position: relative;
   width: 4.18em;
@@ -1056,7 +1056,7 @@ h1::after {
   }
 
   .mark-name {
-    --mark-jele-x: 2.30em;
+    --mark-jele-x: 2.10em;
 
     width: 4.18em;
     height: 1.55em;
