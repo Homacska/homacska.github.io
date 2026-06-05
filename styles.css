@@ -1206,3 +1206,9 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* TEMP: disable work card links while content is unfinished */
+.work-links-off .card {
+  pointer-events: none;
+  cursor: default;
+}
