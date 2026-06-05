@@ -1219,7 +1219,7 @@ a {
   }
 
   .hero-core {
-    transform: translateY(-1.75rem) !important;
+    transform: translateY(-1.5rem) !important;
   }
 
   .hero-actions {
@@ -1241,6 +1241,20 @@ a {
   .name-frame-hero .name-word-jele {
     transform: translateX(calc(var(--mobile-name-pair-shift) * -1));
   }
+
+  .eyebrow {
+  transform: translateY(0.6rem);
+  }
+
+  
+  .signal-phrase {
+    font-size: 0.82rem;
+  }
+
+  .signal-phrase-glitch {
+    font-size: 0.62rem;
+  }
+  
 }
 
 /* TEMP: disable work card links while content is unfinished */
