@@ -11,7 +11,7 @@
     html, body { margin: 0; min-height: 100%; background: #06070a; color: #efe8da; }
   </style>
 
-  <link rel="stylesheet" href="./styles.css?v=13" />
+  <link rel="stylesheet" href="./styles.css?v=15" />
 </head>
 
 <body>
@@ -21,8 +21,22 @@
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
 
+  <!-- =========================================================
+       TOP NAVIGATION
+       Edit labels/links here. The AJ mark returns to the top.
+       ========================================================= -->
   <header class="site-header" aria-label="Primary navigation">
-    <a class="mark" href="#page-top" aria-label="Back to top"><span class="mark-short">AJ</span><span class="mark-full">[ Adam Jele ]</span></a>
+    <a class="mark" href="#page-top" aria-label="Back to top">
+      <span class="mark-short">AJ</span>
+      <span class="mark-full" aria-hidden="true">
+        <span class="mark-bracket">[</span>
+        <span class="mark-name">
+          <span>Adam</span>
+          <span>Jele</span>
+        </span>
+        <span class="mark-bracket">]</span>
+      </span>
+    </a>
     <nav class="top-nav">
       <a href="#signal">Signal</a>
       <a href="#work">Work</a>
@@ -31,16 +45,24 @@
   </header>
 
   <main id="top">
+
+    <!-- =========================================================
+         HERO / LANDING SCREEN
+         Edit the name, floating signal phrases, and hero buttons here.
+         The phrase positioning/animation is controlled in styles.css.
+         ========================================================= -->
     <section class="hero" aria-label="Landing section">
       <div class="hero-core">
         <p class="eyebrow">Research · Behaviour · Data</p>
 
         <div class="name-stage">
+          <!-- Floating phrases: left side of the hero name/brackets. -->
           <div class="signal-zone signal-zone-left" aria-hidden="true">
             <span class="signal-phrase signal-phrase-one">Behavioural science for clearer decisions.</span>
             <span class="signal-phrase signal-phrase-two">Research that turns messy behaviour into clear choices.</span>
             <span class="signal-phrase signal-phrase-five signal-phrase-glitch">NOISE / SIGNAL / DECISION</span>
           </div>
+          <!-- Floating phrases: right side of the hero name/brackets. -->
           <div class="signal-zone signal-zone-right" aria-hidden="true">
             <span class="signal-phrase signal-phrase-three">Evidence-led research for products, brands, and policy.</span>
             <span class="signal-phrase signal-phrase-four">Turning human behaviour into decision-ready evidence.</span>
@@ -66,6 +88,10 @@
       </a>
     </section>
 
+    <!-- =========================================================
+         SIGNAL SECTION
+         Short positioning statement under the hero.
+         ========================================================= -->
     <section id="signal" class="section section-intro">
       <p class="section-kicker">Signal / 001</p>
       <h2>I work at the intersection of human behaviour, evidence, and decision-making.</h2>
@@ -75,41 +101,57 @@
       </p>
     </section>
 
+    <!-- =========================================================
+         WORK SECTION
+         Each card links to a placeholder page in /work/.
+         To add a real image, replace the card-visual <span> shapes
+         with an <img> tag. See examples below.
+         ========================================================= -->
     <section id="work" class="section work-section" aria-label="Selected work themes">
       <p class="section-kicker">Work / 002</p>
       <div class="work-grid">
-      <article class="card">
+      <!-- Work card 01. Edit title/summary/link here. -->
+      <a class="card" href="./work/behavioural-research.html">
+        <!-- CSS placeholder visual. Replace with <img src="./assets/images/your-image.png" alt="..."> later. -->
         <div class="card-visual card-visual-one" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <p>01</p>
         <h3>Behavioural research</h3>
         <span>Implicit methods, survey design, segmentation, decision diagnostics.</span>
-        <small>Case-study placeholder → charts, visuals, text</small>
-      </article>
+        <small>Open case study →</small>
+      </a>
 
-      <article class="card">
+      <!-- Work card 02. Edit title/summary/link here. -->
+      <a class="card" href="./work/data-analysis.html">
+        <!-- CSS placeholder visual. Replace with <img src="./assets/images/your-image.png" alt="..."> later. -->
         <div class="card-visual card-visual-two" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <p>02</p>
         <h3>Data and analysis</h3>
         <span>Quantitative evidence, Python workflows, models, and structured insight.</span>
-        <small>Case-study placeholder → charts, visuals, text</small>
-      </article>
+        <small>Open case study →</small>
+      </a>
 
-      <article class="card">
+      <!-- Work card 03. Edit title/summary/link here. -->
+      <a class="card" href="./work/strategy-story.html">
+        <!-- CSS placeholder visual. Replace with <img src="./assets/images/your-image.png" alt="..."> later. -->
         <div class="card-visual card-visual-three" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
         <p>03</p>
         <h3>Strategy and story</h3>
         <span>Turning noisy findings into clear choices, narratives, and action.</span>
-        <small>Case-study placeholder → charts, visuals, text</small>
-      </article>
+        <small>Open case study →</small>
+      </a>
       </div>
     </section>
 
+    <!-- =========================================================
+         CONTACT SECTION
+         Replace the LinkedIn placeholder URL with the real profile URL.
+         ========================================================= -->
     <section id="contact" class="section contact-section">
       <p class="section-kicker">Contact / 003</p>
       <h2>For research, analytics, behavioural science, and decision-focused work.</h2>

@@ -1,6 +1,10 @@
 /* Personal site — v6 visual build.
    Plain HTML/CSS/JS. GitHub Pages safe. No frameworks. */
 
+/* =========================================================
+   1. THEME VARIABLES
+   Change colours, fonts, spacing tokens here.
+   ========================================================= */
 :root {
   --bg: #06070a;
   --bg-2: #090d14;
@@ -53,6 +57,11 @@ a {
   left: 0;
 }
 
+/* =========================================================
+   2. TOP NAVIGATION
+   AJ mark is the top-left return button.
+   It expands into a mini name lockup on scroll where supported.
+   ========================================================= */
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -79,24 +88,67 @@ a {
   background: rgba(255, 247, 231, 0.04);
   box-shadow: inset 0 0 18px rgba(255, 247, 231, 0.04);
   overflow: hidden;
-  transition: min-width 220ms ease, border-color 180ms ease, background 180ms ease;
+  transition:
+    min-width 260ms ease,
+    height 260ms ease,
+    padding 260ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
 }
 
 .mark-short,
 .mark-full {
   grid-area: 1 / 1;
-  transition: opacity 180ms ease, transform 220ms ease;
+  transition: opacity 180ms ease, transform 240ms ease;
+}
+
+.mark-short {
+  font-family: var(--font-mono);
 }
 
 .mark-full {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 0.38rem;
   opacity: 0;
   transform: translateY(0.45rem);
   white-space: nowrap;
 }
 
+.mark-bracket {
+  color: rgba(255, 247, 231, 0.9);
+  font-family: var(--font-mono);
+  font-size: 2.15rem;
+  font-weight: 200;
+  line-height: 0.75;
+}
+
+.mark-name {
+  display: grid;
+  width: 4.4rem;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+}
+
+.mark-name span:first-child {
+  justify-self: start;
+}
+
+.mark-name span:last-child {
+  justify-self: end;
+  margin-top: -0.04em;
+}
+
 .mark:hover,
 .mark:focus-visible {
-  min-width: 8.8rem;
+  min-width: 8.6rem;
+  height: 3.35rem;
+  padding: 0 0.74rem;
 }
 
 .mark:hover .mark-short,
@@ -193,6 +245,10 @@ a {
   filter: blur(18px);
 }
 
+/* =========================================================
+   3. HERO / LANDING SCREEN
+   Controls full-screen intro, name lockup, brackets, and phrases.
+   ========================================================= */
 .hero {
   position: relative;
   z-index: 1;
@@ -347,7 +403,8 @@ h1::after {
   animation: bracket-flicker 22s steps(1, end) infinite;
 }
 
-/* Fixed v2-style phrase areas outside the bracket/name frame.
+/* Floating phrase areas outside the bracket/name frame.
+   Edit phrase text in index.html, not here.
    Grid columns keep phrases out of the central bracket/name area. */
 .signal-zone {
   position: relative;
@@ -507,6 +564,10 @@ h1::after {
   animation: scroll-pulse 1.8s ease-in-out infinite;
 }
 
+/* =========================================================
+   4. PAGE SECTIONS
+   Shared section layout for Signal, Work, and Contact.
+   ========================================================= */
 .section {
   position: relative;
   z-index: 5;
@@ -536,6 +597,14 @@ h1::after {
   line-height: 1.7;
 }
 
+/* =========================================================
+   5. WORK CARDS
+   Current card visuals are CSS placeholders made from <span> shapes.
+   To use a real image:
+   - put the file in assets/images/
+   - replace the card-visual spans in index.html with:
+     <img src="./assets/images/file-name.png" alt="Description">
+   ========================================================= */
 .work-section {
   padding-top: clamp(5rem, 11vw, 9rem);
 }
@@ -623,6 +692,16 @@ h1::after {
   mask-image: linear-gradient(135deg, black, transparent 78%);
 }
 
+.card-visual img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 8rem;
+  object-fit: cover;
+}
+
 .card-visual span {
   position: absolute;
   display: block;
@@ -696,6 +775,11 @@ h1::after {
   bottom: 1.5rem;
 }
 
+/* =========================================================
+   6. CONTACT BUTTONS
+   Email and LinkedIn pill buttons.
+   Replace LinkedIn URL in index.html.
+   ========================================================= */
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
@@ -746,8 +830,16 @@ h1::after {
 }
 
 @keyframes mark-expand {
-  from { min-width: 2.55rem; }
-  to { min-width: 8.8rem; }
+  from {
+    min-width: 2.55rem;
+    height: 2.55rem;
+    padding: 0 0.78rem;
+  }
+  to {
+    min-width: 8.6rem;
+    height: 3.35rem;
+    padding: 0 0.74rem;
+  }
 }
 
 @keyframes mark-short-hide {
@@ -819,6 +911,10 @@ h1::after {
   50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
 }
 
+/* =========================================================
+   7. RESPONSIVE RULES
+   Adjusts hero, phrase areas, cards, and contact buttons on smaller screens.
+   ========================================================= */
 @media (max-width: 1160px) {
   .name-stage {
     min-height: 32rem;
@@ -840,7 +936,12 @@ h1::after {
 }
 
 @media (max-width: 900px) {
-  .site-header {
+  /* =========================================================
+   2. TOP NAVIGATION
+   AJ mark is the top-left return button.
+   It expands into a mini name lockup on scroll where supported.
+   ========================================================= */
+.site-header {
     padding: 1rem;
   }
 
@@ -848,7 +949,11 @@ h1::after {
     gap: 0.8rem;
   }
 
-  .hero {
+  /* =========================================================
+   3. HERO / LANDING SCREEN
+   Controls full-screen intro, name lockup, brackets, and phrases.
+   ========================================================= */
+.hero {
     padding: 3.5rem 1rem;
   }
 
@@ -922,6 +1027,20 @@ h1::after {
     font-size: 0.66rem;
     letter-spacing: 0.11em;
   }
+
+  .mark-name {
+    width: 3.8rem;
+    font-size: 1.02rem;
+  }
+
+  .mark-bracket {
+    font-size: 1.9rem;
+  }
+
+  .mark:hover,
+  .mark:focus-visible {
+    min-width: 7.8rem;
+  }
 }
 
 @media (max-width: 520px) {
@@ -956,7 +1075,12 @@ h1::after {
     font-size: 0.5rem;
   }
 
-  .contact-actions {
+  /* =========================================================
+   6. CONTACT BUTTONS
+   Email and LinkedIn pill buttons.
+   Replace LinkedIn URL in index.html.
+   ========================================================= */
+.contact-actions {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -974,5 +1098,103 @@ h1::after {
 
   .signal-phrase {
     display: none;
+  }
+}
+
+
+/* =========================================================
+   8. CASE-STUDY PAGES
+   Used by files in /work/. Edit page content in each HTML file.
+   ========================================================= */
+.case-page {
+  position: relative;
+  z-index: 5;
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) 0 clamp(5rem, 10vw, 8rem);
+}
+
+.case-back {
+  display: inline-flex;
+  margin-bottom: clamp(4rem, 10vw, 7rem);
+  color: rgba(241, 234, 219, 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-hero h1 {
+  max-width: 56rem;
+  margin: 0;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.case-hero p:not(.section-kicker) {
+  max-width: 42rem;
+  margin: 1.4rem 0 0;
+  color: rgba(241, 234, 219, 0.68);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.case-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.case-panel {
+  min-height: 15rem;
+  padding: 1.3rem;
+  border: 1px solid rgba(255, 247, 231, 0.11);
+  background:
+    linear-gradient(145deg, rgba(255, 247, 231, 0.075), rgba(255, 247, 231, 0.028)),
+    rgba(7, 8, 10, 0.62);
+  box-shadow: var(--shadow);
+}
+
+.case-panel h2 {
+  margin: 0 0 1rem;
+  color: var(--white);
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+}
+
+.case-panel p {
+  margin: 0;
+  color: rgba(241, 234, 219, 0.66);
+  line-height: 1.6;
+}
+
+.case-wide {
+  grid-column: 1 / -1;
+}
+
+.case-image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 22rem;
+  border: 1px solid rgba(255, 247, 231, 0.12);
+  background:
+    radial-gradient(circle at 22% 22%, rgba(217, 199, 161, 0.12), transparent 35%),
+    radial-gradient(circle at 76% 72%, rgba(157, 200, 255, 0.1), transparent 38%),
+    rgba(255, 247, 231, 0.025);
+  color: rgba(241, 234, 219, 0.48);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .case-layout {
+    grid-template-columns: 1fr;
   }
 }
