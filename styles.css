@@ -111,8 +111,8 @@ a {
 }
 
 /* Mini version of the hero name lockup.
-   This deliberately cancels the nav uppercase styling and mirrors the hero:
-   Adam on row 1, Jele on row 2, same serif, same alignment logic. */
+   Jele is explicitly positioned rather than right-aligned, so its J
+   sits further right under the final arch/stem of the m in Adam. */
 .mark-full {
   display: inline-grid;
   grid-template-columns: auto auto auto;
@@ -135,8 +135,9 @@ a {
 }
 
 .mark-name {
-  display: grid;
-  width: 3.72em;
+  position: relative;
+  width: 4.35em;
+  height: 1.55em;
   color: var(--white);
   font-family: var(--font-display);
   font-size: 1.45rem;
@@ -151,22 +152,25 @@ a {
 }
 
 .mark-name-word {
+  position: absolute;
   display: block;
   text-transform: none;
+  white-space: nowrap;
 }
 
 .mark-name-adam {
-  justify-self: start;
+  left: 0;
+  top: 0;
 }
 
 .mark-name-jele {
-  justify-self: end;
-  margin-top: -0.06em;
+  left: 2.78em;
+  top: 0.72em;
 }
 
 .mark:hover,
 .mark:focus-visible {
-  min-width: 9.4rem;
+  min-width: 9.75rem;
   height: 3.65rem;
   padding: 0 0.78rem;
 }
@@ -857,7 +861,7 @@ h1::after {
     padding: 0 0.78rem;
   }
   to {
-    min-width: 9.4rem;
+    min-width: 9.75rem;
     height: 3.65rem;
     padding: 0 0.78rem;
   }
@@ -1050,8 +1054,14 @@ h1::after {
   }
 
   .mark-name {
-    width: 4.05em;
+    width: 4.35em;
+    height: 1.55em;
     font-size: 1.18rem;
+  }
+
+  .mark-name-jele {
+    left: 2.78em;
+    top: 0.72em;
   }
 
   .mark-bracket {
@@ -1060,7 +1070,7 @@ h1::after {
 
   .mark:hover,
   .mark:focus-visible {
-    min-width: 8rem;
+    min-width: 8.85rem;
   }
 }
 
