@@ -1207,6 +1207,47 @@ a {
   }
 }
 
+
+/* Mobile-only rules */
+/* =========================================================
+   MOBILE-ONLY FIXES
+   Desktop stays unchanged.
+   ========================================================= */
+@media (max-width: 700px) {
+  /* More breathing room at top on mobile */
+  .hero {
+    padding-top: 5.8rem;
+    padding-bottom: 6.5rem;
+  }
+
+  /* Prevent Scroll cue overlapping buttons */
+  .scroll-cue {
+    bottom: 0.9rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.2rem;
+  }
+
+  /* Mobile-only hero name alignment */
+  .name-frame-hero {
+    --name-width: 12.0rem;     /* wider = Jele moves right */
+    --name-size: 3.15rem;
+    --bracket-size: 4.9rem;
+    --lockup-gap: 0.3rem;
+  }
+}
+
+/* Hide scroll cue on very short mobile screens */
+@media (max-width: 700px) and (max-height: 720px) {
+  .scroll-cue {
+    display: none;
+  }
+}
+
+
+
+
 /* TEMP: disable work card links while content is unfinished */
 .work-links-off .card {
   pointer-events: none;
