@@ -1,30 +1,73 @@
-const phrases = Array.from(document.querySelectorAll(".phrase"));
-let phraseIndex = 0;
+const topCluster = document.querySelector(".signal-cluster-top");
+const bottomCluster = document.querySelector(".signal-cluster-bottom");
 
-function rotatePhrase() {
-  if (!phrases.length) return;
-
-  phrases[phraseIndex].classList.remove("is-visible");
-  phraseIndex = (phraseIndex + 1) % phrases.length;
-  phrases[phraseIndex].classList.add("is-visible");
-}
-
-setInterval(rotatePhrase, 3600);
-
-// Tiny controlled interference on keyword text.
-const glitchTexts = [
-  "WHY? MODEL ψ DATA ∆ SIGNAL p < .05 // CATNOISE",
-  "0101 BEHAVIOUR / MODEL / EVIDENCE / %$£! / SIGNAL LOST",
-  "HUMAN INPUT → NOISY OUTPUT → MEANING",
-  "PYTHON / BRAINS / BRANDS / DECISIONS / CATS"
+const signalTexts = [
+  "Behavioural science",
+  "Neuroscience",
+  "Psychology",
+  "Decision-making",
+  "Data",
+  "Python",
+  "Implicit methods",
+  "Quant research",
+  "Human behaviour",
+  "Strategy",
+  "Evidence",
+  "AI workflows",
+  "Models",
+  "Noise → meaning",
+  "Future",
+  "Cyborg-adjacent",
+  "Cats"
 ];
 
-const fields = Array.from(document.querySelectorAll(".glitch-field"));
+const glitchTexts = [
+  "WHY? MODEL ψ DATA ∆ SIGNAL p < .05",
+  "0101 BEHAVIOUR / MODEL / EVIDENCE",
+  "%$£! → CLEAN SIGNAL",
+  "CATNOISE // SIGNAL FOUND",
+  "HUMAN INPUT → NOISY OUTPUT",
+  "MODEL / BRAIN / BRAND / DECISION"
+];
 
-setInterval(() => {
-  fields.forEach((field) => {
-    if (Math.random() > 0.55) {
-      field.textContent = glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
-    }
-  });
-}, 1800);
+let signalCount = 0;
+let nextCluster = "top";
+
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function createSpark(cluster, text, isGlitch = false) {
+  if (!cluster) return;
+
+  const spark = document.createElement("span");
+  spark.className = isGlitch ? "signal-spark is-glitch" : "signal-spark";
+  spark.textContent = text;
+
+  spark.style.setProperty("--x", `${randomBetween(4, 68)}%`);
+  spark.style.setProperty("--y", `${randomBetween(8, 72)}%`);
+  spark.style.setProperty("--life", `${randomBetween(4200, 5600)}ms`);
+
+  cluster.appendChild(spark);
+
+  window.setTimeout(() => {
+    spark.remove();
+  }, 6200);
+}
+
+function spawnSignal() {
+  signalCount += 1;
+
+  const useGlitch = signalCount % 4 === 0;
+  const textPool = useGlitch ? glitchTexts : signalTexts;
+  const text = textPool[Math.floor(Math.random() * textPool.length)];
+
+  const cluster = nextCluster === "top" ? topCluster : bottomCluster;
+  createSpark(cluster, text, useGlitch);
+
+  nextCluster = nextCluster === "top" ? "bottom" : "top";
+}
+
+spawnSignal();
+setTimeout(spawnSignal, 900);
+setInterval(spawnSignal, 1450);

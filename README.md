@@ -19,13 +19,13 @@ Present Adam’s work across behavioural science, quantitative research, data, d
 
 - `index.html` — page structure and content
 - `styles.css` — full visual system and responsive styling
-- `script.js` — text rotation and subtle glitch text
+- `script.js` — scattered signal text and subtle glitch injections
 - `AGENTS.md` — instructions for future coding agents
 - `.nojekyll` — avoids GitHub Pages/Jekyll processing issues
 
 ## Design direction
 
-Dark, elegant, scientific, old/new, editorial, high-tech, restrained glitch. The first landing screen should fill the viewport and centre Adam’s name inside a bracket-style frame.
+Dark, elegant, scientific, old/new, editorial, high-tech, restrained glitch. The first landing screen fills the viewport and centres Adam’s name inside bracket-style framing.
 
 ## Deployment
 

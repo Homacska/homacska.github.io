@@ -6,7 +6,7 @@ Build a professional personal website for Adam Jele focused on behavioural scien
 
 ## Current design direction
 
-The landing page should feel dark, elegant, powerful, scientific, and slightly futuristic. It should open with a full-screen hero centred around the name "Adam Jele" inside bracket-like framing.
+The landing page should feel dark, elegant, powerful, scientific, and slightly futuristic. It opens with a full-screen hero centred around the name "Adam Jele" inside bracket-like framing.
 
 Desired feel:
 
@@ -16,7 +16,7 @@ Desired feel:
 - elegant, not loud
 - technical but not generic
 - subtle glitch/interference
-- floating keyword clusters
+- scattered signal text near the top-right and bottom-left of the name frame
 - scientific/research/product-lab mood
 
 Avoid:
@@ -27,6 +27,7 @@ Avoid:
 - heavy JavaScript
 - frameworks unless explicitly requested
 - over-engineering
+- top navigation cluttering the hero
 
 ## Technical rules
 
@@ -53,9 +54,18 @@ Position Adam as a researcher/analyst working across:
 
 Keep copy concise, concrete, and professional.
 
+## Recent visual decisions
+
+- Removed top navigation/header from the landing screen.
+- Name must stay on one line.
+- Brackets should be slightly larger than the name.
+- Display font should feel more powerful and high-contrast.
+- Rotating text now appears as scattered signal sparks around the top-right and bottom-left of the name frame.
+- Glitch/noise strings should appear only occasionally, roughly every fourth signal.
+
 ## Immediate next priorities
 
-1. Confirm CSS loads correctly on GitHub Pages.
+1. Confirm layout on desktop and mobile.
 2. Refine hero visual polish.
 3. Add real project/case-study cards.
 4. Add CV download and LinkedIn/GitHub links.
