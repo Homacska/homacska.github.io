@@ -246,32 +246,34 @@ h1::after {
   animation-delay: 7s;
 }
 
-/* Loose signal areas outside the bracket/name frame. */
+/* Fixed v2-style phrase areas outside the bracket/name frame.
+   Content is in the HTML now so old random one-word/glitch text cannot appear. */
 .signal-zone {
   position: absolute;
   z-index: 5;
-  width: min(24rem, 26vw);
-  height: min(25rem, 44vw);
+  width: min(34rem, 31vw);
+  height: min(26rem, 46vw);
   pointer-events: none;
 }
 
 .signal-zone-left {
-  right: calc(50% + min(29vw, 28rem));
-  bottom: 7%;
+  right: calc(50% + min(31vw, 29rem));
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .signal-zone-right {
-  left: calc(50% + min(29vw, 28rem));
-  top: 6%;
+  left: calc(50% + min(31vw, 29rem));
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.signal-spark {
+.signal-phrase {
   position: absolute;
-  top: var(--y);
   max-width: min(32rem, 31vw);
   color: rgba(241, 234, 219, 0.78);
   font-family: var(--font-main);
-  font-size: clamp(0.98rem, 1.9vw, 1.22rem);
+  font-size: clamp(0.98rem, 2vw, 1.22rem);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.35;
@@ -282,35 +284,37 @@ h1::after {
     0 0 22px rgba(255, 247, 231, 0.18),
     0 0 46px rgba(217, 199, 161, 0.1);
   transform: none;
-  animation: signal-appear var(--life, 7.2s) ease-in-out forwards;
+  animation: signal-appear 22s ease-in-out infinite;
 }
 
-.signal-zone-left .signal-spark {
-  right: var(--x);
-  left: auto;
+.signal-zone-left .signal-phrase {
+  right: 0;
   text-align: right;
 }
 
-.signal-zone-right .signal-spark {
-  left: var(--x);
-  right: auto;
+.signal-zone-right .signal-phrase {
+  left: 0;
   text-align: left;
 }
 
-.signal-spark.is-blue,
-.signal-spark.is-sand,
-.signal-spark.is-glitch {
-  color: rgba(241, 234, 219, 0.78);
-  font-family: var(--font-main);
-  font-size: clamp(0.98rem, 1.9vw, 1.22rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
-  text-transform: none;
-  transform: none;
-  text-shadow:
-    0 0 22px rgba(255, 247, 231, 0.18),
-    0 0 46px rgba(217, 199, 161, 0.1);
+.signal-phrase-one {
+  top: 18%;
+  animation-delay: 0s;
+}
+
+.signal-phrase-two {
+  top: 66%;
+  animation-delay: 11s;
+}
+
+.signal-phrase-three {
+  top: 12%;
+  animation-delay: 5.5s;
+}
+
+.signal-phrase-four {
+  top: 60%;
+  animation-delay: 16.5s;
 }
 
 .hero-actions {
@@ -484,19 +488,23 @@ h1::after {
   }
 }
 
-/* Same visual character as the old line below the name: fade/blur only, no movement. */
+/* V2 bottom-line look + old tag fade feel: fade/blur only, no movement. */
 @keyframes signal-appear {
   0% {
     opacity: 0;
     filter: blur(4px);
   }
-  20% {
+  10% {
     opacity: 0.9;
     filter: blur(0);
   }
-  78% {
+  34% {
     opacity: 0.82;
     filter: blur(0);
+  }
+  46% {
+    opacity: 0;
+    filter: blur(4px);
   }
   100% {
     opacity: 0;
@@ -520,20 +528,19 @@ h1::after {
   }
 
   .signal-zone {
-    width: min(21rem, 28vw);
+    width: min(27rem, 30vw);
   }
 
   .signal-zone-left {
-    right: calc(50% + min(31vw, 24rem));
+    right: calc(50% + min(32vw, 24rem));
   }
 
   .signal-zone-right {
-    left: calc(50% + min(31vw, 24rem));
+    left: calc(50% + min(32vw, 24rem));
   }
 
-  .signal-spark,
-  .signal-spark.is-glitch {
-    font-size: clamp(0.88rem, 1.35vw, 1.05rem);
+  .signal-phrase {
+    font-size: clamp(0.86rem, 1.35vw, 1.05rem);
     max-width: min(26rem, 30vw);
   }
 }
@@ -562,24 +569,26 @@ h1::after {
   }
 
   .signal-zone {
-    width: min(23rem, 80vw);
+    width: min(23rem, 82vw);
     height: 8rem;
   }
 
   .signal-zone-left {
     right: auto;
     left: 4%;
+    top: auto;
     bottom: 0;
+    transform: none;
   }
 
   .signal-zone-right {
     left: auto;
     right: 4%;
     top: 0;
+    transform: none;
   }
 
-  .signal-spark,
-  .signal-spark.is-glitch {
+  .signal-phrase {
     max-width: 82vw;
     font-size: 0.82rem;
   }
@@ -621,8 +630,7 @@ h1::after {
     height: 7rem;
   }
 
-  .signal-spark,
-  .signal-spark.is-glitch {
+  .signal-phrase {
     font-size: 0.66rem;
   }
 }
@@ -637,7 +645,7 @@ h1::after {
     transition-duration: 0.001ms !important;
   }
 
-  .signal-spark {
+  .signal-phrase {
     display: none;
   }
 }
