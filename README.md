@@ -1,10 +1,10 @@
-# Adam Jele — Personal Website
+# Personal Website
 
-Static GitHub Pages website for Adam Jele’s professional portfolio.
+This is my static personal website and professional portfolio.
 
 ## Purpose
 
-Present Adam’s work across behavioural science, quantitative research, data, decision-making, and AI-adjacent workflows.
+I want this site to present my work across behavioural science, quantitative research, data, decision-making, and AI-adjacent workflows.
 
 ## Tech
 
@@ -25,7 +25,9 @@ Present Adam’s work across behavioural science, quantitative research, data, d
 
 ## Design direction
 
-Dark, elegant, scientific, old/new, editorial, high-tech, restrained glitch. The first landing screen fills the viewport and centres Adam’s name inside bracket-style framing.
+I want the site to feel dark, elegant, scientific, old/new, editorial, high-tech, and restrained. The first landing screen should fill the viewport and centre my name inside bracket-style framing.
+
+The landing text around my name should feel like floating signal fragments, not structured tags. It should fade in and out in loose areas around the brackets, with only a few visible at a time.
 
 ## Deployment
 

@@ -1,24 +1,15 @@
-const topCluster = document.querySelector(".signal-cluster-top");
-const bottomCluster = document.querySelector(".signal-cluster-bottom");
+const leftZone = document.querySelector(".signal-zone-left");
+const rightZone = document.querySelector(".signal-zone-right");
 
 const signalTexts = [
-  "Behavioural science",
-  "Neuroscience",
-  "Psychology",
-  "Decision-making",
-  "Data",
-  "Python",
-  "Implicit methods",
-  "Quant research",
-  "Human behaviour",
-  "Strategy",
-  "Evidence",
-  "AI workflows",
-  "Models",
-  "Noise → meaning",
-  "Future",
-  "Cyborg-adjacent",
-  "Cats"
+  "Signal extraction for brands, products, and policy.",
+  "Behavioural science for better decisions.",
+  "Quant research with a nervous system.",
+  "Evidence, strategy, and the occasional cat.",
+  "Human behaviour → decision-ready evidence.",
+  "Data, psychology, and useful noise reduction.",
+  "Models are useful. People are stranger.",
+  "From messy behaviour to clearer choices."
 ];
 
 const glitchTexts = [
@@ -31,28 +22,28 @@ const glitchTexts = [
 ];
 
 let signalCount = 0;
-let nextCluster = "top";
+let nextZone = "right";
 
 function randomBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function createSpark(cluster, text, isGlitch = false) {
-  if (!cluster) return;
+function createSpark(zone, text, isGlitch = false) {
+  if (!zone) return;
 
   const spark = document.createElement("span");
   spark.className = isGlitch ? "signal-spark is-glitch" : "signal-spark";
   spark.textContent = text;
 
-  spark.style.setProperty("--x", `${randomBetween(4, 68)}%`);
-  spark.style.setProperty("--y", `${randomBetween(8, 72)}%`);
-  spark.style.setProperty("--life", `${randomBetween(4200, 5600)}ms`);
+  spark.style.setProperty("--x", `${randomBetween(0, 72)}%`);
+  spark.style.setProperty("--y", `${randomBetween(2, 86)}%`);
+  spark.style.setProperty("--life", `${randomBetween(3900, 5400)}ms`);
 
-  cluster.appendChild(spark);
+  zone.appendChild(spark);
 
   window.setTimeout(() => {
     spark.remove();
-  }, 6200);
+  }, 6000);
 }
 
 function spawnSignal() {
@@ -62,12 +53,12 @@ function spawnSignal() {
   const textPool = useGlitch ? glitchTexts : signalTexts;
   const text = textPool[Math.floor(Math.random() * textPool.length)];
 
-  const cluster = nextCluster === "top" ? topCluster : bottomCluster;
-  createSpark(cluster, text, useGlitch);
+  const zone = nextZone === "right" ? rightZone : leftZone;
+  createSpark(zone, text, useGlitch);
 
-  nextCluster = nextCluster === "top" ? "bottom" : "top";
+  nextZone = nextZone === "right" ? "left" : "right";
 }
 
 spawnSignal();
-setTimeout(spawnSignal, 900);
-setInterval(spawnSignal, 1450);
+setTimeout(spawnSignal, 1200);
+setInterval(spawnSignal, 1850);

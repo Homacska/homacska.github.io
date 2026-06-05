@@ -2,11 +2,11 @@
 
 ## Project goal
 
-Build a professional personal website for Adam Jele focused on behavioural science, research, data, decision-making, and AI-adjacent work.
+Build my professional personal website around behavioural science, research, data, decision-making, and AI-adjacent work.
 
 ## Current design direction
 
-The landing page should feel dark, elegant, powerful, scientific, and slightly futuristic. It opens with a full-screen hero centred around the name "Adam Jele" inside bracket-like framing.
+The landing page should feel dark, elegant, powerful, scientific, and slightly futuristic. It opens with a full-screen hero centred around my name inside bracket-like framing.
 
 Desired feel:
 
@@ -16,7 +16,7 @@ Desired feel:
 - elegant, not loud
 - technical but not generic
 - subtle glitch/interference
-- scattered signal text near the top-right and bottom-left of the name frame
+- floating signal fragments around the brackets
 - scientific/research/product-lab mood
 
 Avoid:
@@ -28,6 +28,7 @@ Avoid:
 - frameworks unless explicitly requested
 - over-engineering
 - top navigation cluttering the hero
+- structured tag boxes around the name
 
 ## Technical rules
 
@@ -42,7 +43,7 @@ Avoid:
 
 ## Content positioning
 
-Position Adam as a researcher/analyst working across:
+Position me as a researcher/analyst working across:
 
 - behavioural science
 - quantitative research
@@ -57,10 +58,14 @@ Keep copy concise, concrete, and professional.
 ## Recent visual decisions
 
 - Removed top navigation/header from the landing screen.
-- Name must stay on one line.
+- My name must stay on one line.
 - Brackets should be slightly larger than the name.
-- Display font should feel more powerful and high-contrast.
-- Rotating text now appears as scattered signal sparks around the top-right and bottom-left of the name frame.
+- Display font should feel powerful and high-contrast.
+- The single line under my name has been removed.
+- The text from that line now appears as loose floating signal fragments around the name frame.
+- Signal fragments should not have boxes or tag styling.
+- Signal fragments should appear in taller, less structured areas around the brackets.
+- Only a few fragments should be visible at once.
 - Glitch/noise strings should appear only occasionally, roughly every fourth signal.
 
 ## Immediate next priorities

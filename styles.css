@@ -1,4 +1,4 @@
-/* Adam Jele personal site — v3 visual build.
+/* Personal site — v4 visual build.
    Plain HTML/CSS/JS. GitHub Pages safe. No frameworks. */
 
 :root {
@@ -130,7 +130,7 @@ a {
   display: grid;
   justify-items: center;
   text-align: center;
-  width: min(100%, 72rem);
+  width: min(100%, 78rem);
   animation: arrive 1200ms cubic-bezier(.2,.8,.2,1) both;
 }
 
@@ -148,8 +148,8 @@ a {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 74rem);
-  min-height: clamp(16rem, 35vw, 26rem);
+  width: min(100%, 78rem);
+  min-height: clamp(19rem, 38vw, 30rem);
 }
 
 .name-frame {
@@ -201,7 +201,7 @@ h1 {
     0 18px 55px rgba(0, 0, 0, 0.62);
 }
 
-/* small serious "quirk": a precise editorial cut through the name */
+/* Small serious "quirk": a precise editorial cut through the name. */
 h1::after {
   content: "";
   position: absolute;
@@ -232,65 +232,63 @@ h1::after {
   animation: bracket-right 4.6s ease-in-out infinite;
 }
 
-.anchor-line {
-  max-width: 44rem;
-  margin: 0.6rem 0 0;
-  color: rgba(241, 234, 219, 0.76);
-  font-size: clamp(0.98rem, 2vw, 1.2rem);
-  letter-spacing: 0.015em;
-}
-
-.signal-cluster {
+.signal-zone {
   position: absolute;
   z-index: 4;
-  width: min(28rem, 42vw);
-  height: min(13rem, 26vw);
+  width: min(34rem, 42vw);
+  height: min(24rem, 46vw);
   pointer-events: none;
 }
 
-.signal-cluster-top {
-  top: 0.4rem;
-  right: clamp(0.5rem, 6vw, 5rem);
+.signal-zone-left {
+  left: clamp(0rem, 2vw, 2rem);
+  bottom: clamp(0rem, 2vw, 2rem);
 }
 
-.signal-cluster-bottom {
-  left: clamp(0.5rem, 6vw, 5rem);
-  bottom: 0.2rem;
+.signal-zone-right {
+  right: clamp(0rem, 2vw, 2rem);
+  top: clamp(0rem, 2vw, 2rem);
 }
 
 .signal-spark {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  max-width: min(17rem, 44vw);
-  padding: 0.34rem 0.52rem;
-  border: 1px solid rgba(255, 247, 231, 0.11);
-  background: rgba(255, 247, 231, 0.035);
-  box-shadow:
-    0 0 28px rgba(217, 199, 161, 0.08),
-    inset 0 0 18px rgba(255, 247, 231, 0.025);
-  backdrop-filter: blur(14px);
-  color: rgba(255, 247, 231, 0.72);
+  max-width: min(24rem, 46vw);
+  color: rgba(255, 247, 231, 0.76);
   font-family: var(--font-mono);
-  font-size: clamp(0.58rem, 1.12vw, 0.76rem);
+  font-size: clamp(0.62rem, 1.08vw, 0.82rem);
   letter-spacing: 0.12em;
-  line-height: 1.25;
+  line-height: 1.35;
   text-align: left;
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0;
-  filter: blur(5px);
-  transform: translate3d(0, 0.75rem, 0) scale(0.96);
-  animation: spark-life var(--life, 4.8s) cubic-bezier(.2,.8,.2,1) forwards;
+  filter: blur(7px);
+  text-shadow:
+    0 0 20px rgba(255, 247, 231, 0.16),
+    0 0 42px rgba(217, 199, 161, 0.08);
+  transform: translate3d(0, 0.85rem, 0) scale(0.97);
+  animation: spark-life var(--life, 4.6s) cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.signal-spark:nth-child(3n) {
+  color: rgba(217, 199, 161, 0.82);
+}
+
+.signal-spark:nth-child(4n) {
+  color: rgba(157, 200, 255, 0.72);
 }
 
 .signal-spark.is-glitch {
-  color: rgba(157, 200, 255, 0.72);
-  border-color: rgba(157, 200, 255, 0.13);
-  background: rgba(157, 200, 255, 0.035);
+  color: rgba(157, 200, 255, 0.7);
+  letter-spacing: 0.16em;
+  text-shadow:
+    0 0 18px rgba(157, 200, 255, 0.14),
+    0 0 44px rgba(157, 200, 255, 0.08);
   animation-name: spark-life, glitch-jolt;
-  animation-duration: var(--life, 4.8s), 620ms;
-  animation-delay: 0s, 1.2s;
+  animation-duration: var(--life, 4.2s), 620ms;
+  animation-delay: 0s, 1.15s;
   animation-timing-function: cubic-bezier(.2,.8,.2,1), steps(2, end);
   animation-iteration-count: 1, 2;
 }
@@ -298,7 +296,7 @@ h1::after {
 .hero-actions {
   display: flex;
   gap: 0.8rem;
-  margin-top: 2.25rem;
+  margin-top: 1.6rem;
 }
 
 .button {
@@ -467,23 +465,23 @@ h1::after {
 @keyframes spark-life {
   0% {
     opacity: 0;
-    filter: blur(8px);
-    transform: translate3d(0, 0.9rem, 0) scale(0.96);
+    filter: blur(9px);
+    transform: translate3d(0, 1rem, 0) scale(0.96);
   }
-  18% {
-    opacity: 0.86;
+  20% {
+    opacity: 0.82;
     filter: blur(0);
     transform: translate3d(0, 0, 0) scale(1);
   }
-  68% {
+  56% {
     opacity: 0.74;
     filter: blur(0);
-    transform: translate3d(0, -0.12rem, 0) scale(1);
+    transform: translate3d(0, -0.18rem, 0) scale(1);
   }
   100% {
     opacity: 0;
-    filter: blur(7px);
-    transform: translate3d(0, -0.85rem, 0) scale(0.985);
+    filter: blur(8px);
+    transform: translate3d(0, -1rem, 0) scale(0.985);
   }
 }
 
@@ -509,7 +507,7 @@ h1::after {
   }
 
   .name-stage {
-    min-height: 22rem;
+    min-height: 24rem;
   }
 
   .name-frame {
@@ -525,19 +523,19 @@ h1::after {
     font-size: clamp(4.2rem, 19vw, 8rem);
   }
 
-  .signal-cluster {
-    width: min(22rem, 72vw);
-    height: 9rem;
+  .signal-zone {
+    width: min(22rem, 74vw);
+    height: 11rem;
   }
 
-  .signal-cluster-top {
-    top: 0;
-    right: 0;
-  }
-
-  .signal-cluster-bottom {
+  .signal-zone-left {
     left: 0;
     bottom: 0;
+  }
+
+  .signal-zone-right {
+    right: 0;
+    top: 0;
   }
 
   .signal-spark {
@@ -565,7 +563,7 @@ h1::after {
   }
 
   .name-stage {
-    min-height: 20rem;
+    min-height: 23rem;
   }
 
   h1 {
@@ -576,12 +574,14 @@ h1::after {
     font-size: clamp(3.55rem, 18vw, 5.7rem);
   }
 
-  .anchor-line {
-    max-width: 20rem;
+  .signal-zone {
+    opacity: 0.78;
+    height: 8rem;
   }
 
-  .signal-cluster {
-    opacity: 0.75;
+  .signal-spark {
+    font-size: 0.54rem;
+    letter-spacing: 0.08em;
   }
 }
 
