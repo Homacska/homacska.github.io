@@ -62,9 +62,9 @@ function createSpark(zone, text, isGlitch = false) {
   spark.textContent = text;
 
   /* Keep text inside the side zones so it sits outside the brackets and does not overlap the name area. */
-  spark.style.setProperty("--x", `${randomBetween(0, 58)}%`);
+  spark.style.setProperty("--x", `${randomBetween(0, 18)}%`);
   spark.style.setProperty("--y", `${randomBetween(4, 84)}%`);
-  spark.style.setProperty("--life", `${randomBetween(4200, 5600)}ms`);
+  spark.style.setProperty("--life", `${randomBetween(4300, 5600)}ms`);
 
   zone.appendChild(spark);
 
@@ -95,4 +95,4 @@ setTimeout(spawnSignal, 450);
 setTimeout(spawnSignal, 1100);
 
 /* Sparse, pulsing, no drifting movement. */
-setInterval(spawnSignal, 1550);
+setInterval(spawnSignal, 1600);
